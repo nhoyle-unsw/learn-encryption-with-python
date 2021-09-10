@@ -1,0 +1,1 @@
+I decided to make an infographic about integers, factoring and prime numbers.
