@@ -35,15 +35,18 @@ I may change the name near the end of the project to something more snappy.
 Cryptography and Python:
 Book: https://www.wiley.com/en-au/Implementing+Cryptography+Using+Python-p-9781119612216
 
+Addition, Subtraction, Multiplication, Division, Roots, Exponentiation, Logarithm
+https://en.wikipedia.org/wiki/Template:Arithmetic_operations
+
 Integer Factorisation
-Web: https://en.wikipedia.org/wiki/Integer_factorization
+https://en.wikipedia.org/wiki/Integer_factorization
 
 Prime Factorisation:
-Web visual: https://blog.jgc.org/2012/04/make-your-own-prime-factorization.html
+https://blog.jgc.org/2012/04/make-your-own-prime-factorization.html
 
 Factors and Prime Factors:
-Web: https://byjus.com/maths/factors-of-26/
-Web: https://www.mathsisfun.com/numbers/factors-all-tool.html
+https://byjus.com/maths/factors-of-26/
+https://www.mathsisfun.com/numbers/factors-all-tool.html
 
 Prime Numbers:
-Web: https://en.wikipedia.org/wiki/Prime_number
+https://en.wikipedia.org/wiki/Prime_number
