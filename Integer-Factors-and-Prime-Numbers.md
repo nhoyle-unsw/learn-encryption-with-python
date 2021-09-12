@@ -29,3 +29,15 @@ By definition, a prime number must have two distinct factors and 1 only has one 
 This infographic shows all of these concepts for the integers from 1 to 31.
 
 ![Integers, Factoring and Prime Numbers](https://raw.githubusercontent.com/wiki/nhoyle-unsw/learn-encryption-with-python/images/prime-factors.png)
+
+## Co-prime
+When a number shares no factors with another number other than 1 they are said to be **coprime**.
+
+An example is 21 and 22. you can see from the diagram that:
+* 21 has factors **1**, 3, 7, 21
+* 22 has factors **1**, 2, 11, 22
+* They only share a factor of **1**, so they are coprime.
+21 is not a prime number and neither is 22 but they are **coprime**.
+
+## References
+[1] https://www.mathsisfun.com/definitions/coprime.html
