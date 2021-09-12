@@ -50,3 +50,6 @@ https://www.mathsisfun.com/numbers/factors-all-tool.html
 
 Prime Numbers:
 https://en.wikipedia.org/wiki/Prime_number
+
+Euler's Totient Function
+https://youtu.be/qa_hksAzpSg
