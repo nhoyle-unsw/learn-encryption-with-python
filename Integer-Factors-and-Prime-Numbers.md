@@ -44,7 +44,7 @@ An example is 21 and 22. you can see from the diagram that:
 ### Find prime numbers
 https://onlinegdb.com/mBlQVi5R2
 []
-<script src="//onlinegdb.com/embed/js/mBlQVi5R2?theme=dark"></script>
+<script src="https://onlinegdb.com/embed/js/mBlQVi5R2?theme=dark"></script>
 [insert code here]
 
 ### Calculate factors of numbers
