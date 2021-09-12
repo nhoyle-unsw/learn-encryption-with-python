@@ -72,9 +72,9 @@ The magic thing about φ(p) . φ(q) is that it is the same as φ(p.q)
 
 **e.g. the Phi of 7 is 6 and the Phi of 11 is 10, the Phi of 7 times 11 is Phi of 77 which equal 60.**
 
-## Phi of all number plotted on a graph
+## Phi of all numbers to 150 plotted on a graph
 
-![Integers, Factoring and Prime Numbers](https://raw.githubusercontent.com/wiki/nhoyle-unsw/learn-encryption-with-python/images/plot-phi-of-x.png)
+![Integers, Factoring and Prime Numbers](https://raw.githubusercontent.com/wiki/nhoyle-unsw/learn-encryption-with-python/images/plot-phi-of-x-annotated.png)
 
 ## Mathematics
 
