@@ -42,20 +42,11 @@ An example is 21 and 22. you can see from the diagram that:
 ## Python examples
 
 ### Find prime numbers
-https://onlinegdb.com/mBlQVi5R2
+[Ctrl-click here to run this python code](https://onlinegdb.com/mBlQVi5R2)
 
 ```python
-'''
-
-                            Online Python Compiler.
-                Code, Compile, Run and Debug python program online.
-Write your code in this editor and press "Run" button to execute it.
-
-'''
-
 print("Hello World")
 print("Hello World Again")
-
 ```
 
 ### Calculate factors of numbers
