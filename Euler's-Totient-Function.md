@@ -96,8 +96,8 @@ We will use this property of two prime numbers and their product later when calc
 
 ## References
 
-https://youtu.be/qa_hksAzpSg Khan Academy Labs
+https://youtu.be/qa_hksAzpSg Khan Academy Labs - Euler's Totient
 
-https://www.youtube.com/watch?v=2JY3P3aHUJk Michael Penn
+https://www.youtube.com/watch?v=2JY3P3aHUJk Michael Penn - Euler's Totient
 
 Wolfram Alpha LLC. 2009. Wolfram|Alpha. https://www.wolframalpha.com/input/?i=plot+phi+of+x (access September 12, 2021).
