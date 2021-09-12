@@ -39,5 +39,17 @@ An example is 21 and 22. you can see from the diagram that:
 * They only share a factor of **1**, so they are coprime.
 21 is not a prime number and neither is 22 but they are **coprime**.
 
+## Python examples
+
+### Find prime numbers
+https://onlinegdb.com/mBlQVi5R2
+[]
+<script src="//onlinegdb.com/embed/js/mBlQVi5R2?theme=dark"></script>
+[insert code here]
+
+### Calculate factors of numbers
+[insert code here]
+
+
 ## References
 [1] https://www.mathsisfun.com/definitions/coprime.html
