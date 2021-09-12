@@ -43,9 +43,20 @@ An example is 21 and 22. you can see from the diagram that:
 
 ### Find prime numbers
 https://onlinegdb.com/mBlQVi5R2
-[]
-<script src="https://onlinegdb.com/embed/js/mBlQVi5R2?theme=dark"></script>
-[insert code here]
+
+```python
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+print("Hello World")
+print("Hello World Again")
+
+```
 
 ### Calculate factors of numbers
 [insert code here]
