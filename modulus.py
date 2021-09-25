@@ -18,7 +18,7 @@ def mod(a, b):
     # start at the value of a
     r = a
     # chack if our remainder is still larger than b
-    while r > b:
+    while r >= b:
         printd("remainder:", r)
         # subtract the divisor
         r = r - b
