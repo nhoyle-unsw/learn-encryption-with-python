@@ -2,7 +2,7 @@
 from __future__ import print_function
 import sys
 
-is_debug = True
+is_debug = False
 
 
 def printd(*args, **kwargs):
