@@ -35,11 +35,14 @@ is_debug = args.debug
 def main():
     printd('Number of arguments:', len(sys.argv), 'arguments.')
     printd('Argument List:', str(sys.argv))
-    if args.command == "mod":
+    if "mod" == args.command:
         print(modulus.mod(args.a, args.b))
         return 0
-    elif args.command == "gcd":
+    elif "gcd" == args.command:
         print(factors.gcd(args.a, args.b))
+        return 0
+    elif "gcdr" == args.command:
+        print(factors.gcdr(args.a, args.b))
         return 0
 
 

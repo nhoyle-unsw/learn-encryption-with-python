@@ -24,3 +24,7 @@ def mod(a, b):
         r = r - b
     printd("a mod b =", r)
     return r
+
+
+def mod_mul_inv(a, m):
+    return None
