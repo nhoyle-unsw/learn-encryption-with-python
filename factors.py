@@ -15,13 +15,13 @@ def gcd(a, b):
     Step 5:  GCD = b
     Step 6: Finish
     """
-    printd("find gcd of a , b:", a, ", ", b)
+    printd("find gcd of a , b:", a, ",", b)
     r = modulus.mod(a, b)
     while (r > 0):
         a = b
         b = r
         r = modulus.mod(a, b)
-    return r
+    return b
 
 
 def gcdr(a, b):
