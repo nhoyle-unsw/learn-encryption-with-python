@@ -8,6 +8,7 @@
 import sys
 import argparse
 from printd import printd
+import printd as printd_mod
 import modulus
 import factors
 import euler
@@ -33,6 +34,8 @@ parser.add_argument("-v", "--verbose", help="increase output verbosity",
                     action="store_true")
 args = parser.parse_args()
 is_debug = args.debug
+# https://stackoverflow.com/questions/38246928/using-global-variable-in-python-among-modules-in-different-packages
+printd_mod.is_debug = args.debug
 
 
 def main():

@@ -16,12 +16,18 @@ def gcd(a, b):
     Step 6: Finish
     """
     printd("find gcd of a , b:", a, ",", b)
+    if a == 0 and b == 0:  # gcd of 0 and 0 is 0: https://math.stackexchange.com/questions/495119/what-is-gcd0-0
+        return 0
+    elif b == 0:  # swap a and b if b is zero otherwise the mod fails.
+        b = a
+        a = 0
     r = modulus.mod(a, b)
+    printd("r:", r, "a:", a, "b:", b)
     while (r > 0):
         a = b
         b = r
         r = modulus.mod(a, b)
-    return b
+    return b  # we return the last remainder found which is b. If no remainder is found then the original b is the common factor
 
 
 def gcdr(a, b):

@@ -18,8 +18,9 @@ def phi(n):
     # at 1 and work our way up finding all numbers that have a  greatest common
     # demoninator of 1 wiuth the number (co-prime)
     # https://en.wikipedia.org/wiki/Euler%27s_totient_function
+    # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_range
     count = 0
-    for i in range(1, n):
+    for i in range(n):  # 0 -> n-1
         if factors.gcd(i, n) == 1:
             count += 1
     return count

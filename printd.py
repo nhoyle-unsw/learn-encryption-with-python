@@ -2,6 +2,7 @@
 from __future__ import print_function
 import sys
 
+# https://stackoverflow.com/questions/38246928/using-global-variable-in-python-among-modules-in-different-packages
 is_debug = False
 
 
