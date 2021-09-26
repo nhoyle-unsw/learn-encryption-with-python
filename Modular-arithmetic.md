@@ -1,6 +1,6 @@
 # Modular arithmetic
 
-## Mod
+## Modulus - Mod
 Although it sounds very technical modulus is a pretty simple concept. We all know what division is - how many times a number goes into another number. Well, with integers (whole numbers) when you do division sometimes you have a remainder. e.g. 10 divided by 3 goes 3 times and a remainder of 1. The remainder is the modulus. so:
 - 10 mod 3 = 1 (remainder of 1)
 - 10 mod 5 = 0 (no remainder)
@@ -16,7 +16,7 @@ $ python rsa_demo.py mod  -a 10 -b 5
 ```
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L12
 
-## Modular multiplicative inverse
+## Modular multiplicative inverse - Mod Inv
 The modular multiplicative inverse is asking the following question:
 If I have a number **a** and I want to divide it by **m** to get a remainder of 1, so what would I need to multiply **a** by to get this remainder of 1? 
 
