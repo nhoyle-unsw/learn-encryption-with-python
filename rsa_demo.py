@@ -53,7 +53,7 @@ def main():
         print(modulus.mod(args.a, args.b))
         return 0
     if "modinv" == args.command:
-        print(modulus.mod_mul_inv_naieve(args.a, args.m))
+        print(modulus.mod_mul_inv_naive(args.a, args.m))
         return 0
     elif "gcd" == args.command:
         print(factors.gcd(args.a, args.b))

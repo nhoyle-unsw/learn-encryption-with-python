@@ -92,7 +92,7 @@ class UnitTests(unittest.TestCase):
 
     def test_mod_mult_inv(self):
         self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
-        self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
+        self.assertTrue(mod_mul_inv_naive(7, 42) == None)
         self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
         self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
         self.assertTrue(mod_mul_inv_naive(3, 7) == 5)

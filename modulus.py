@@ -26,7 +26,7 @@ def mod(a, b):
     return r
 
 
-def mod_mul_inv_naieve(a, m):
+def mod_mul_inv_naive(a, m):
     """[summary]
     find the modular multiplicative inverse of a number a in modulo m
     https://en.wikipedia.org/wiki/Modular_multiplicative_inverse
@@ -47,7 +47,7 @@ def mod_mul_inv_naieve(a, m):
     for i in range(1, m):
         if (mod(mod(a, i) * mod(i, m), m) == 1):
             return i
-    return -1
+    return None
 
 
 def mod_mul_inv_euclid(a, m):
