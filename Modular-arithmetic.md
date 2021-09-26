@@ -4,6 +4,7 @@
 Although it sounds very technical modulus is a pretty simple concept. We all know what division is - how many times a number goes into another number. Well, with integers (whole numbers) when you do division sometimes you have a remainder. e.g. 10 divided by 3 goes 3 times and a remainder of 1. The remainder is the modulus. so:
 - 10 mod 3 = 1 (remainder of 1)
 - 10 mod 5 = 0 (no remainder)
+[1]
 
 ### Python code example
 ```bash
@@ -44,6 +45,7 @@ Find the mod inverse 3x = 1 (mod 7)
 1. (17 x 3) mod 7 => **51 mod 7** = 2
 1. (18 x 3) mod 7 => **54 mod 7** = 5
 1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
+(see [2])
 
 ### Python code example
 ```
@@ -62,3 +64,4 @@ $ python rsa_demo.py mod -a 15 -b 7
 
 ## References
 [1] https://en.wikipedia.org/wiki/Modular_arithmetic
+[2] https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
