@@ -14,9 +14,9 @@ def phi(n):
     Returns:
         [int]: [Euler's totient of the number n]
     """
-    # We need to find the number of coprimes that a number has so we need to start
-    # at 1 and work our way up finding all numbers that have a  greatest common
-    # demoninator of 1 wiuth the number (co-prime)
+    # We need to find the number of co-primes that a number has so we need to start
+    # at 1 and work our way up finding all numbers that have a greatest common
+    # demoninator of 1 with the number (co-prime)
     # https://en.wikipedia.org/wiki/Euler%27s_totient_function
     # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_range
     count = 0
