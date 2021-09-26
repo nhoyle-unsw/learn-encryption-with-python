@@ -13,7 +13,7 @@ $ python rsa_demo.py mod  -a 10 -b 3
 $ python rsa_demo.py mod  -a 10 -b 5        
 0
 ```
-https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L12
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L12
 
 ## Modular multiplicative inverse
 The modular multiplicative inverse is asking the following question:
@@ -47,10 +47,18 @@ Find the mod inverse 3x = 1 (mod 7)
 
 ### Python code example
 ```
-$ python rsa_demo.py modinv -a 3 -m 7      
+$ python rsa_demo.py mod -a 3 -b 7
+3
+$ python rsa_demo.py mod -a 6 -b 7
+6
+$ python rsa_demo.py mod -a 9 -b 7
+2
+$ python rsa_demo.py mod -a 12 -b 7        
 5
+$ python rsa_demo.py mod -a 15 -b 7
+1
 ```
-https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
 
 ## References
 [1] https://en.wikipedia.org/wiki/Modular_arithmetic
