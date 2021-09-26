@@ -91,11 +91,16 @@ class UnitTests(unittest.TestCase):
         self.assertTrue(prime(103))
 
     def test_mod_mult_inv(self):
+        # https://www.wolframalpha.com/input/?i=0x+%3D+1+%28mod+1%29
+        self.assertTrue(mod_mul_inv_naive(0, 1) == 0)
         self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
+        # https://www.wolframalpha.com/input/?i=7x+%3D+1+%28mod+42%29
         self.assertTrue(mod_mul_inv_naive(7, 42) == None)
-        self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
-        self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
-        self.assertTrue(mod_mul_inv_naive(3, 7) == 5)
+        # https://www.wolframalpha.com/input/?i=x+%3D+1+%28mod+1%29
+        self.assertTrue(mod_mul_inv_naive(3, 0) == 0)
+        self.assertTrue(mod_mul_inv_naive(3, 0) == 0)
+        # https://www.wolframalpha.com/input/?i=3x+%3D+1+%28mod+3%29
+        self.assertTrue(mod_mul_inv_naive(3, 3) == None)
 
 
 if __name__ == '__main__':

@@ -37,11 +37,11 @@ parser.add_argument("-d", "--debug", action="store_true",
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
                     action="store_true")
 args = parser.parse_args()
-is_debug = args.debug
+is_debug = args.debug or args.verbose
 is_verbose = args.verbose
 # https://stackoverflow.com/questions/38246928/using-global-variable-in-python-among-modules-in-different-packages
 # set the debug and verbosity levels in the print module
-printd_module.is_debug = args.debug
+printd_module.is_debug = args.debug or args.verbose
 printd_module.is_verbose = args.verbose
 
 

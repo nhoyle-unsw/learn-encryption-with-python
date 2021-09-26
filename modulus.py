@@ -44,7 +44,9 @@ def mod_mul_inv_naive(a, m):
     Returns:
         [x]: [the modular multiplicative inverse of a]
     """
-    for i in range(1, m):
+    printd("ax = 1 (mod m): %ix = 1 (mod %i)" % (a, m))
+    for i in range(1, m+1):
+        printd("mod inv i:", i)
         if (mod(mod(a, i) * mod(i, m), m) == 1):
             return i
     return None
