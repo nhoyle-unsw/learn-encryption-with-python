@@ -29,14 +29,21 @@ Find the mod inverse 3x = 1 (mod 7)
 1. (2 x 3) mod 7 =>** 6 mod 7** = 6
 1. (3 x 3) mod 7 => **9 mod 7** = 2
 1. (4 x 3) mod 7 => **12 mod 7** = 5
-1. (5 x 3) mod 7 => **15 mod 7** = 1 **Yay!** there is no need to go any further, but lets do it anyway:
+1. (5 x 3) mod 7 => **15 mod 7** = **1** **Yay!** there is no need to go any further, but lets do it anyway:
 1. (6 x 3) mod 7 => **18 mod 7** = 4 
-1. (7 x 3) mod 7 => **21 mod **7 = 0
+1. (7 x 3) mod 7 => **21 mod 7** = 0
 1. (8 x 3) mod 7 => **24 mod 7** = 3
 1. (9 x 3) mod 7 => **27 mod 7** = 6
 1. (10 x 3) mod 7 => **30 mod 7** = 2
 1. (11 x 3) mod 7 => **33 mod 7** = 5
-1. (12 x 3) mod 36 => **36 mod 7** = 1 no need to go any further, this just repeats the same pattern, so let's stop.
+1. (12 x 3) mod 36 => **36 mod 7** = **1** **Yay!** no need to go any further, this just repeats the same pattern, so let's do one more:
+1. (13 x 3) mod 7 => **39 mod 7** = 4 
+1. (14 x 3) mod 7 => **42 mod 7** = 0
+1. (15 x 3) mod 7 => **45 mod 7** = 3
+1. (16 x 3) mod 7 => **48 mod 7** = 6
+1. (17 x 3) mod 7 => **51 mod 7** = 2
+1. (18 x 3) mod 7 => **54 mod 7** = 5
+1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
 
 ### Python code example
 ```
