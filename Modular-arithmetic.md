@@ -38,8 +38,12 @@ Find the mod inverse 3x = 1 (mod 7)
 1. (11 x 3) mod 7 => **33 mod 7** = 5
 1. (12 x 3) mod 36 => **36 mod 7** = 1 no need to go any further, this just repeats the same pattern, so let's stop.
 
-
-### Python code
+### Python code example
+```
+$ python rsa_demo.py modinv -a 3 -m 7      
+5
+```
+https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
 
 ## References
 [1] https://en.wikipedia.org/wiki/Modular_arithmetic
