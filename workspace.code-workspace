@@ -9,5 +9,8 @@
 	{
 		"path": "..\\fake-confessions-python"
 	}
-]
+],
+"settings": {
+	"files.eol": "\n"
+}
 }
