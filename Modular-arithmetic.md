@@ -76,36 +76,80 @@ The multiplicative inverse of “a modulo m” exists if and only if a and m are
 ## My definition
 The modular multiplicative inverse is useful in a similar manner to when you multiply the two side of an equation by the same number. It keeps the sides equal. An example is: 
 
-4x = 16  (lets call it equation 1)
+4x = 16  (lets call this **equation 1**)
 so we can work out what x is by putting a number in for x and seeing which one works:
-|x|4x|
---- | ---
-|1|4| not 16
-|2|8| not 16
-|3|12| not 16
-|4|16| 16 ! So the answer to this equation is x = 4 because it makes the sides equal.
+|   x   |   4x   | does this equal 16? |
+--------|--------|--------
+|   1   |    4   | not 16 |
+|   2   |    8   | not 16 |
+|   3   |   12   | not 16 |
+|   4   | 16     | **= 16 ! Yay!** |
 
-If we start again from the same equation:
+So the x that makes this equation correct is x = 4 because it makes both of the sides equal to 16.
+
+Now, if we start from the same equation again:
 4x = 16
 
-But now, let's do something to both sides of the equation. Let's divide each side by 2:
-4x/2 = 16/2
-2x = 8
-
-Let's divide each side by 2 again:
-2x/2 = 8/2
+But now, let's do something to both sides of the equation. Let's divide each side by 4:
+4x/4 = 16/4
 x = 4
 
-Both of these equations are equivalent to the original "equation 1" because x is still equal to 4 even though we divided both sides by 2. You haven't changed anything because you did the same thing to both sides. This is simple to understand for basic arithmetic like multiplication. But for modular arithmetic, it is a little harder to find an equivalent thing we can do to both sides of the equation and still have them equal to each other. So, let's look at the equivalent in modular arithmetic.
+OK, that seemed to work, let's start again:
+4x = 16
 
-I'll use an example equation 10 mod 7. we know that the answer to that is 3 because the remainder is 3. So we can write that 10 mod 7 is congruent to 3 mod 7. This means both 10 and 3 have the same remainder when divided by 7. 10 ÷ 7 = 1 remainder 3. also 3 ÷ 7 = 0 remainder 3. Or 10 mod 7 = 3 and 3 mod 7 = 3 also, so we can write that they are congruent like this:
+And this time, let's try to subtract 8 from both sides:
+4x - 8 = 16 - 8
+4x - 8 = 8
+
+Now lets divide both sides by 4:
+(4x - 8) ÷ 4 = 8 ÷ 4
+(4x ÷ 4) - (8 ÷ 4) = 8 ÷ 4
+x - 2 = 2
+and finally add 2 to both sides
+x - 2 + 2 = 2 + 2
+and again we end up with:
+x = 4
+
+All of these equations are equivalent to the original "equation 1" because x is still equal to 4 even though we multiply and add to both sides by 2. You haven't unbalanced anything because you did the same thing to both sides. This is simple enough to understand for basic arithmetic like addition and multiplication. But for modular arithmetic, it is a little harder to find an equivalent thing we can do to both sides of the equation and still have them balanced with each other. So, let's look at the equivalent in modular arithmetic.
+
+I'll use an example equation **10 mod 7**. We know that the answer to 10 mod 7 is 3 because if we divide 10 by 7 it goes once and we have a remainder of 3. We also know that **3 mod 7** also equals 3 because if we divide 3 by 7 we get zero with a remainder of 3.
+So now we can write that 10 mod 7 is equivalent to 3 mod 7. Or in mathematical language, we can say they are congruent. This means both 10 and 3 have the same remainder when divided by 7:
+10 ÷ 7 = 1 r **3**
+and
+3 ÷ 7  = 0 r **3**
+We can also write that
+**10 mod 7 = 3**
+and
+**3 mod 7 = 3**
+
+To be precise we don't say they are equal, we say they are "congruent". We can indicate that they are congruent like this:
 
 10 mod 7 ≅ 3 mod 7
 
-Now, what if I want to do multiply both sides of this equation but still have them congruent with each other. How do I find that number? Let's try 2 again and see what happens:
+Now, what if I wanted to multiply both sides of this equation by a number but still have them congruent with each other, how do I find that number? Let's try 2 and see what happens:
 
-10 X 2 mod 7 = 20 mod 7 = 6
-3 x 2  mod 7 = 6  mod 7 = 1  
+10 X 2 mod 7 ==> 20 mod 7 = 6
+3 x 2  mod 7 ==> 6  mod 7 = 6
+
+That looks like it worked, let's try another number. Let's try multiplying by 3:
+
+10 x 3 mod 7 ==> 30 mod 7 = 2
+3 x 3  mod 7 ==> 9  mod 7 = 2
+That looks like it worked, but I am not sure, it may have been luck, so let's try multiplying by 3 again:
+
+30 x 3 mod 7 ==> 90 mod 7 = 6
+9 x 3  mod 7 ==> 27  mod 7 = 6
+
+So it appears you can multiply both sides by the same number and have them still be congruent. This also works for addition and subtraction. In fact teh following all hold true for modular arithmetic [3]:
+
+> Sometimes the calculation can be simplified because for any integer a1, b1, a2 andb2, if we know that a1 ≡ b1 mod n and a2 ≡ b2 mod n then the following always holds:
+> a1+a2 ≡ b1+b2 mod n
+> a1-a2 ≡ b1-b2 mod n
+> a1*a2 ≡ b1*b2 mod n
+
+Division is another story though. How can we do the inverse of multiplying both sides? Can we divide? Well, yes, sometimes we can and sometimes we can't [3]. It is not always possible to divide under modulo arithmetic because zero appears quite often when using mod and division by zero is not defined. So what can we do? We can work out when it is OK to divide as long as we avoid the zeros and the fractions. We are operating in whole numbers and can no have fractions. So this limits the options available to you.
+
+ 
 
 
 
@@ -113,3 +157,4 @@ Now, what if I want to do multiply both sides of this equation but still have th
 ## References
 [1] https://en.wikipedia.org/wiki/Modular_arithmetic
 [2] https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
+[3] http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html
