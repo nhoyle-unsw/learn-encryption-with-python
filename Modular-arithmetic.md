@@ -16,65 +16,8 @@ $ python rsa_demo.py mod  -a 10 -b 5
 ```
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L12
 
-## Modular multiplicative inverse - Mod Inv
-The modular multiplicative inverse is asking the following question:
-If I have a number **a** and I want to divide it by **m** to get a remainder of 1, so what would I need to multiply **a** by to get this remainder of 1? 
-
-In maths symbols, it looks like this:
-Solve this by finding an x: a**x** = 1 (mod m)
-
-You can do this by trying a mod m, then 2a mod m, then 3a mod m, until you get an answer of 1. Here is an example:
-Find the mod inverse 3x = 1 (mod 7)
-1. (0 x 3) mod 7 => **0 mod 7** = 0
-1. (1 x 3) mod 7 => **3 mod 7** = 3
-1. (2 x 3) mod 7 =>** 6 mod 7** = 6
-1. (3 x 3) mod 7 => **9 mod 7** = 2
-1. (4 x 3) mod 7 => **12 mod 7** = 5
-1. (5 x 3) mod 7 => **15 mod 7** = **1** **Yay!** there is no need to go any further, but lets do it anyway:
-1. (6 x 3) mod 7 => **18 mod 7** = 4 
-1. (7 x 3) mod 7 => **21 mod 7** = 0
-1. (8 x 3) mod 7 => **24 mod 7** = 3
-1. (9 x 3) mod 7 => **27 mod 7** = 6
-1. (10 x 3) mod 7 => **30 mod 7** = 2
-1. (11 x 3) mod 7 => **33 mod 7** = 5
-1. (12 x 3) mod 36 => **36 mod 7** = **1** **Yay!** no need to go any further, this just repeats the same pattern, so let's do one more:
-1. (13 x 3) mod 7 => **39 mod 7** = 4 
-1. (14 x 3) mod 7 => **42 mod 7** = 0
-1. (15 x 3) mod 7 => **45 mod 7** = 3
-1. (16 x 3) mod 7 => **48 mod 7** = 6
-1. (17 x 3) mod 7 => **51 mod 7** = 2
-1. (18 x 3) mod 7 => **54 mod 7** = 5
-1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
-(see [2])
-
-### Python code example
-```
-$ python rsa_demo.py mod -a 3 -b 7
-3
-$ python rsa_demo.py mod -a 6 -b 7
-6
-$ python rsa_demo.py mod -a 9 -b 7
-2
-$ python rsa_demo.py mod -a 12 -b 7        
-5
-$ python rsa_demo.py mod -a 15 -b 7
-1
-```
-**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
-
-## More formal definition
-The example defintion above was in order to show a simple algorithm for calulating the multiplicative modular inverse. A more formal definition can be stated as follows [2]:
-
-The modular multiplicative inverse is an integer ‘x’ such that: 
-
-a x ≅ 1 (mod m)
-
-The value of x should be in the range { 1, 2, … m-1}, i.e., in the range of integer modulo m.
-(Note that: x cannot be 0 as 0 mod m =0 for all m and will never be 1 )
-The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e., if gcd(a, m) = 1). [2]
-
-## My definition
-The modular multiplicative inverse is useful in a similar manner to when you multiply the two side of an equation by the same number. It keeps the sides equal. An example is: 
+## Relation to regular arithmetic
+Modular Arithmetic is similar to regular arithmetic for addition, subtraction and multiplication, but not for division [3]. So let's review regular arithmetic as a refresher and then see how it differs. When you multiply the two sides of an equation by the same number it keeps the two sides equal. An example is: 
 
 4x = 16  (lets call this **equation 1**)
 so we can work out what x is by putting a number in for x and seeing which one works:
@@ -140,18 +83,75 @@ That looks like it worked, but I am not sure, it may have been luck, so let's tr
 30 x 3 mod 7 ==> 90 mod 7 = 6
 9 x 3  mod 7 ==> 27  mod 7 = 6
 
-So it appears you can multiply both sides by the same number and have them still be congruent. This also works for addition and subtraction. In fact teh following all hold true for modular arithmetic [3]:
+So it appears you can multiply both sides by the same number and have them still be congruent. This also works for addition and subtraction. In fact, the following all hold true for modular arithmetic [3]:
 
-> Sometimes the calculation can be simplified because for any integer a1, b1, a2 andb2, if we know that a1 ≡ b1 mod n and a2 ≡ b2 mod n then the following always holds:
-> a1+a2 ≡ b1+b2 mod n
-> a1-a2 ≡ b1-b2 mod n
-> a1*a2 ≡ b1*b2 mod n
+> Sometimes the calculation can be simplified because for any integer a1, b1, a2 andb2, if we know that a1 ≡ b1 mod n and a2 ≡ b2 mod n then the following always holds: 
+> a1+a2 ≡ b1+b2 mod n 
+> a1-a2 ≡ b1-b2 mod n 
+> a1*a2 ≡ b1*b2 mod n 
 
-Division is another story though. How can we do the inverse of multiplying both sides? Can we divide? Well, yes, sometimes we can and sometimes we can't [3]. It is not always possible to divide under modulo arithmetic because zero appears quite often when using mod and division by zero is not defined. So what can we do? We can work out when it is OK to divide as long as we avoid the zeros and the fractions. We are operating in whole numbers and can no have fractions. So this limits the options available to you.
-
+Division is another story though. So, can we do division at all? The answer is, sometimes we can and sometimes we can't [3]. It is not always possible to divide using modulo arithmetic because zero appears quite often. We all remember that division by zero is not defined. Also, we are operating in whole numbers and cannot have results that are fractions. So what can we do? How can we work out when it is OK to divide modular equations? What is the inverse of multiplication? 
  
+## Modular multiplicative inverse
+The modular multiplicative inverse is asking the following question:
+If I have a number **a** and I want to divide it by **m** and get a remainder of 1, so what would I need to multiply **a** by to get a remainder of 1? 
 
+In maths symbols, it looks like this:
+Solve this by finding an x that satisfies: a**x** = 1 (mod m)
 
+If we can find this magic x then we will be able to use it to divide our equations. 
+
+You can find this x by trial and error. So let's try 0a mod m, then 1a mod m, then 2a mod m, then 3a mod m, until you get an answer of 1. Here is an example:
+Find the mod inverse of 3 mod 7 = 3. To do this we need to find an x that gives us an answer of 1 for 3x mod 7, or:
+3x ≅ 1 (mod 7)
+Let's start at 1 and work our way up (there is no point starting a zero because "0 mod n" is zero for all numbers)
+1. (1 x 3) mod 7 => **3 mod 7** = 3
+1. (2 x 3) mod 7 =>** 6 mod 7** = 6
+1. (3 x 3) mod 7 => **9 mod 7** = 2
+1. (4 x 3) mod 7 => **12 mod 7** = 5
+1. (5 x 3) mod 7 => **15 mod 7** = **1** **Yay!** there is no need to go any further, but lets do it anyway:
+1. (6 x 3) mod 7 => **18 mod 7** = 4 
+1. (7 x 3) mod 7 => **21 mod 7** = 0
+1. (8 x 3) mod 7 => **24 mod 7** = 3
+1. (9 x 3) mod 7 => **27 mod 7** = 6
+1. (10 x 3) mod 7 => **30 mod 7** = 2
+1. (11 x 3) mod 7 => **33 mod 7** = 5
+1. (12 x 3) mod 7 => **36 mod 7** = **1** **Yay!** no need to go any further, this just repeats the same pattern, so let's do one more:
+1. (13 x 3) mod 7 => **39 mod 7** = 4 
+1. (14 x 3) mod 7 => **42 mod 7** = 0
+1. (15 x 3) mod 7 => **45 mod 7** = 3
+1. (16 x 3) mod 7 => **48 mod 7** = 6
+1. (17 x 3) mod 7 => **51 mod 7** = 2
+1. (18 x 3) mod 7 => **54 mod 7** = 5
+1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
+(see [2]). It is not surprising that we see this repeating every 7th iteration as we are using modulo 7.
+
+### Python code example
+```
+$ python rsa_demo.py mod -a 3 -b 7
+3
+$ python rsa_demo.py mod -a 6 -b 7
+6
+$ python rsa_demo.py mod -a 9 -b 7
+2
+$ python rsa_demo.py mod -a 12 -b 7        
+5
+$ python rsa_demo.py mod -a 15 -b 7
+1
+```
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
+
+## More formal definition
+The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows [2]:
+
+> The modular multiplicative inverse is an integer ‘x’ such that: 
+> 
+> a x ≅ 1 (mod m) 
+> 
+> The value of x should be in the range { 1, 2, … m-1}, i.e., in the range of integer modulo m. 
+> (Note that: x cannot be 0 as 0 mod m =0 for all m and will never be 1 ) 
+> The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e., if gcd(a, m) = 1). [2]
+> 
 
 
 ## References
