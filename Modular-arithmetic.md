@@ -89,6 +89,7 @@ So it appears you can multiply both sides by the same number and have them still
 >  a1+a2 ≡ b1+b2 mod n  
 >  a1-a2 ≡ b1-b2 mod n  
 >  a1*a2 ≡ b1*b2 mod n  
+>
 [3]
 
 Division is another story though. So, can we do division at all? The answer is, sometimes we can and sometimes we can't [3]. It is not always possible to divide using modulo arithmetic because zero appears quite often. We all remember that division by zero is not defined. Also, we are operating in whole numbers and cannot have results that are fractions. So what can we do? How can we work out when it is OK to divide modular equations? What is the inverse of multiplication? 
@@ -145,17 +146,17 @@ $ python rsa_demo.py mod -a 15 -b 7
 ## More formal definition
 The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows:
 
-> The modular multiplicative inverse is an integer ‘x’ such that:  
+> The modular multiplicative inverse is an integer **x** such that:  
 >  
 > a x ≅ 1 (mod m)  
 >  
 > The value of x should be in the range { 1, 2, … m-1}, i.e., in the range of integer modulo m.  
-> (Note that: x cannot be 0 as 0 mod m =0 for all m and will never be 1)  
-> The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e., if gcd(a, m) = 1).  
->  
+> (Note that: x cannot be 0 as 0 mod m = 0 for all m and will never be 1)  
+> The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e. if gcd(a, m) = 1).  
+>
 [2]
 
 ## References
-[1] https://en.wikipedia.org/wiki/Modular_arithmetic
-[2] https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
-[3] http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html
+[1] https://en.wikipedia.org/wiki/Modular_arithmetic  
+[2] https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/  
+[3] http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html  
