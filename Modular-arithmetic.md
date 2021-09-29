@@ -8,16 +8,16 @@ Although it sounds very technical modulus is a pretty simple concept. We all kno
 
 ### Python code example
 ```bash
-$ python rsa_demo.py mod  -a 10 -b 3        
+$ python rsa_demo.py mod  -a 10 -b 3
 1
 
-$ python rsa_demo.py mod  -a 10 -b 5        
+$ python rsa_demo.py mod  -a 10 -b 5
 0
 ```
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L12
 
 ## Relation to regular arithmetic
-Modular Arithmetic is similar to regular arithmetic for addition, subtraction and multiplication, but not for division [3]. So let's review regular arithmetic as a refresher and then see how it differs. When you multiply the two sides of an equation by the same number it keeps the two sides equal. An example is: 
+Modular arithmetic is similar to regular arithmetic for addition, subtraction and multiplication, but not for division [3]. So let's review regular arithmetic as a refresher and then see how it differs. When you multiply the two sides of an equation by the same number it keeps the two sides equal. An example is: 
 
 4x = 16  (lets call this **equation 1**)
 so we can work out what x is by putting a number in for x and seeing which one works:
@@ -83,12 +83,13 @@ That looks like it worked, but I am not sure, it may have been luck, so let's tr
 30 x 3 mod 7 ==> 90 mod 7 = 6
 9 x 3  mod 7 ==> 27  mod 7 = 6
 
-So it appears you can multiply both sides by the same number and have them still be congruent. This also works for addition and subtraction. In fact, the following all hold true for modular arithmetic [3]:
+So it appears you can multiply both sides by the same number and have them still be congruent. This also works for addition and subtraction. In fact, the following all hold true for modular arithmetic:
 
-> Sometimes the calculation can be simplified because for any integer a1, b1, a2 andb2, if we know that a1 ≡ b1 mod n and a2 ≡ b2 mod n then the following always holds: 
-> a1+a2 ≡ b1+b2 mod n 
-> a1-a2 ≡ b1-b2 mod n 
-> a1*a2 ≡ b1*b2 mod n 
+>  Sometimes the calculation can be simplified because for any integer a1, b1, a2 andb2, if we know that a1 ≡ b1 mod n and a2 ≡ b2 mod n then the following always holds:  
+>  a1+a2 ≡ b1+b2 mod n  
+>  a1-a2 ≡ b1-b2 mod n  
+>  a1*a2 ≡ b1*b2 mod n  
+[3]
 
 Division is another story though. So, can we do division at all? The answer is, sometimes we can and sometimes we can't [3]. It is not always possible to divide using modulo arithmetic because zero appears quite often. We all remember that division by zero is not defined. Also, we are operating in whole numbers and cannot have results that are fractions. So what can we do? How can we work out when it is OK to divide modular equations? What is the inverse of multiplication? 
  
@@ -142,7 +143,7 @@ $ python rsa_demo.py mod -a 15 -b 7
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
 
 ## More formal definition
-The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows [2]:
+The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows:
 
 > The modular multiplicative inverse is an integer ‘x’ such that: 
 > 
@@ -152,7 +153,7 @@ The example definition above was in order to show a simple algorithm for calcula
 > (Note that: x cannot be 0 as 0 mod m =0 for all m and will never be 1 ) 
 > The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e., if gcd(a, m) = 1). [2]
 > 
-
+[2]
 
 ## References
 [1] https://en.wikipedia.org/wiki/Modular_arithmetic
