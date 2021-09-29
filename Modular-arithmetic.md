@@ -128,7 +128,7 @@ Let's start at 1 and work our way up (there is no point starting a zero because 
 1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
 (see [2]). It is not surprising that we see this repeating every 7th iteration as we are using modulo 7.
 
-### Python code example
+### Python code example (the long way)
 ```
 $ python rsa_demo.py mod -a 3 -b 7
 3
@@ -141,7 +141,6 @@ $ python rsa_demo.py mod -a 12 -b 7
 $ python rsa_demo.py mod -a 15 -b 7
 1
 ```
-**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
 
 ## More formal definition
 The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows:
@@ -155,6 +154,19 @@ The example definition above was in order to show a simple algorithm for calcula
 > The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e. if gcd(a, m) = 1).  
 >
 [2]
+
+### Python code example (the short way)
+```sh
+$ python rsa_demo.py modinv -a 3 -m 7       
+5
+```
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
+
+```sh
+$ python rsa_demo.py modinv_euclid -a 3 -m 7 
+5
+```
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L55
 
 ## References
 [1] https://en.wikipedia.org/wiki/Modular_arithmetic  
