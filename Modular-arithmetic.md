@@ -7,7 +7,7 @@ Although it sounds very technical modulus is a pretty simple concept. We all kno
 [1]
 
 ### Python code example
-```bash
+```console
 $ python rsa_demo.py mod  -a 10 -b 3
 1
 
@@ -129,7 +129,7 @@ Let's start at 1 and work our way up (there is no point starting a zero because 
 (see [2]). It is not surprising that we see this repeating every 7th iteration as we are using modulo 7.
 
 ### Python code example (the long way)
-```
+```console
 $ python rsa_demo.py mod -a 3 -b 7
 3
 $ python rsa_demo.py mod -a 6 -b 7
@@ -156,13 +156,13 @@ The example definition above was in order to show a simple algorithm for calcula
 [2]
 
 ### Python code example (the short way)
-```sh
+```console
 $ python rsa_demo.py modinv -a 3 -m 7       
 5
 ```
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
 
-```sh
+```console
 $ python rsa_demo.py modinv_euclid -a 3 -m 7 
 5
 ```
