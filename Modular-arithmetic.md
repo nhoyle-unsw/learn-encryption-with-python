@@ -4,7 +4,7 @@
 Although it sounds very technical modulus is a pretty simple concept. We all know what division is - how many times a number goes into another number. Well, with integers (whole numbers) when you do division sometimes you have a remainder. e.g. 10 divided by 3 goes 3 times and a remainder of 1. The remainder is the modulus. so:
 - 10 mod 3 = 1 (remainder of 1)
 - 10 mod 5 = 0 (no remainder)
-[^1]
+[^\[1\]]
 
 ### Python code example
 ```console
@@ -190,7 +190,7 @@ $ python rsa_demo.py modinv_euclid -a 3 -m 7
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L55
 
 ## References
-[^1]: https://en.wikipedia.org/wiki/Modular_arithmetic  
-[^2]: https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/  
-[^3]: http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html  
-[^4]: https://math.libretexts.org/Bookshelves/Algebra/Elementary_Algebra_(Ellis_and_Burzynski)/02%3A_Basic_Properties_of_Real_Numbers/2.04%3A_Properties_of_the_Real_Numbers  
+[^\[1\]]: https://en.wikipedia.org/wiki/Modular_arithmetic  
+[^[2]]: https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/  
+[^[3]]: http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html  
+[^[4]]: https://math.libretexts.org/Bookshelves/Algebra/Elementary_Algebra_(Ellis_and_Burzynski)/02%3A_Basic_Properties_of_Real_Numbers/2.04%3A_Properties_of_the_Real_Numbers  
