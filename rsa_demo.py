@@ -52,8 +52,14 @@ def main():
     if "mod" == args.command:
         print(modulus.mod(args.a, args.b))
         return 0
-    if "modinv" == args.command:
+    elif "modinv" == args.command:
         print(modulus.mod_mul_inv_naive(args.a, args.m))
+        return 0
+    elif "modinv_euclid" == args.command:
+        print(modulus.mod_mul_inv_euclid(args.a, args.m))
+        return 0
+    elif "modinv_euler" == args.command:
+        print(modulus.mod_mul_inv_euler(args.a, args.m))
         return 0
     elif "gcd" == args.command:
         print(factors.gcd(args.a, args.b))

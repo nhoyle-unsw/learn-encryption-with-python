@@ -19,9 +19,8 @@ def prime(n):
 
     # first checck it is greater than 1
     printd("Check if n is prime:", n)
-    if not n > 1:
+    if n <= 1:
         return False
-    count = 0
     for i in range(2, n):  # 0 -> n-1
         printd("i:", i)
         if mod(n, i) == 0:

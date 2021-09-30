@@ -1,8 +1,7 @@
 # factors
 
 from modulus import mod
-from printd import printd
-from printd import printv
+from printd import printd, printv
 
 
 def gcd(a, b):
@@ -45,7 +44,7 @@ def have_factors(a, b):
         [boolean]: [True if it has any factors other than 1 and itself, False otherwise]
     """
     smallest = a if a <= b else b
-    for i in range(2, a+1):
+    for i in range(2, smallest+1):
         if mod(i, a) == 0 and mod(i, b) == 0:
             return False
     return True
