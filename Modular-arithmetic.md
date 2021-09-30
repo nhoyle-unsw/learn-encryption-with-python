@@ -2,9 +2,9 @@
 
 ## Modulus - Mod
 Although it sounds very technical modulus is a pretty simple concept. We all know what division is - how many times a number goes into another number. Well, with integers (whole numbers) when you do division sometimes you have a remainder. e.g. 10 divided by 3 goes 3 times and a remainder of 1. The remainder is the modulus. so:
-- 10 mod 3 = 1 (remainder of 1)
+- 10 mod 3 = 1 (remainder of 1)  
 - 10 mod 5 = 0 (no remainder)
-[^\[1\]]
+[\[1\]]
 
 ### Python code example
 ```console
@@ -17,7 +17,7 @@ $ python rsa_demo.py mod  -a 10 -b 5
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L12
 
 ## Relation to regular arithmetic
-Modular arithmetic is similar to regular arithmetic for addition, subtraction and multiplication, but not for division [^3]. So let's review regular arithmetic as a refresher and then see how it differs. When you multiply the two sides of an equation by the same number it keeps the two sides equal. An example is: 
+Modular arithmetic is similar to regular arithmetic for addition, subtraction and multiplication, but not for division [\[3\]]. So let's review regular arithmetic as a refresher and then see how it differs. When you multiply the two sides of an equation by the same number it keeps the two sides equal. An example is: 
 
 4x = 16  (lets call this **equation 1**)
 so we can work out what x is by putting a number in for x and seeing which one works:
@@ -90,12 +90,12 @@ So it appears you can multiply both sides by the same number and have them still
 >  a1-a2 ≡ b1-b2 mod n  
 >  a1*a2 ≡ b1*b2 mod n  
 >
-[^3]
+[\[3\]]
 
-Division is another story though. So, can we do division at all? The answer is, sometimes we can and sometimes we can't [3]. It is not always possible to divide using modulo arithmetic because zero appears quite often. We all remember that division by zero is not defined. Also, we are operating in whole numbers and cannot have results that are fractions. So what can we do? How can we work out when it is OK to divide modular equations? What is the inverse of multiplication? [^4]
+Division is another story though. So, can we do division at all? The answer is, sometimes we can and sometimes we can't [\[3\]]. It is not always possible to divide using modulo arithmetic because zero appears quite often. We all remember that division by zero is not defined. Also, we are operating in whole numbers and cannot have results that are fractions. So what can we do? How can we work out when it is OK to divide modular equations? What is the inverse of multiplication? [\[4\]]
  
 ## Modular multiplicative inverse
-We need to start with asking "what is division?". Well in regular algebra, division is the opposite of multiplication or what is called the _multiplicative inverse_ [^4]. It is the thing we do to a number **a** so that when we multiply it by a number **b** it equals one. For example, the multiplicative inverse of 2 is ½ because:
+We need to start with asking "what is division?". Well in regular algebra, division is the opposite of multiplication or what is called the _multiplicative inverse_ [\[4\]]. It is the thing we do to a number **a** so that when we multiply it by a number **b** it equals one. For example, the multiplicative inverse of 2 is ½ because:
 2 * ½ = 1
 
 We can do the same thing in modular arithmetic. Let's ask ourselves: "What would I need to do to a modular equation to get it to equal 1?". An example is:
@@ -141,7 +141,7 @@ Let's start at 1 and work our way up (there is no point starting a zero because 
 1. (17 x 3) mod 7 => **51 mod 7** = 2
 1. (18 x 3) mod 7 => **54 mod 7** = 5
 1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
-(see [^2]). It is not surprising that we see this repeating every 7th iteration as we are using modulo 7.
+(see [\[2\]]). It is not surprising that we see this repeating every 7th iteration as we are using modulo 7.
 
 ### Python code example (the long way)
 We can use the python program to calculate each of the steps above:
@@ -169,7 +169,7 @@ The example definition above was in order to show a simple algorithm for calcula
 > (Note that: x cannot be 0 as 0 mod m = 0 for all m and will never be 1)  
 > The multiplicative inverse of “a modulo m” exists if and only if a and m are relatively prime (i.e. if gcd(a, m) = 1).  
 >
-[^2]
+[\[2\]]
 
 ### Python code example (the short way)
 Here is a naive implementation of finding the mod inverse of a number, it uses the method above where it keeps searching until it fonds a 1 - OR it gives up if it doesn't find anything:  
@@ -189,8 +189,10 @@ $ python rsa_demo.py modinv_euclid -a 3 -m 7
 ```
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L55
 
+
 ## References
-[^\[1\]]: https://en.wikipedia.org/wiki/Modular_arithmetic  
-[^[2]]: https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/  
-[^[3]]: http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html  
-[^[4]]: https://math.libretexts.org/Bookshelves/Algebra/Elementary_Algebra_(Ellis_and_Burzynski)/02%3A_Basic_Properties_of_Real_Numbers/2.04%3A_Properties_of_the_Real_Numbers  
+
+[\[1\]]: https://en.wikipedia.org/wiki/Modular_arithmetic  
+[\[2\]]: https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/  
+[\[3\]]: http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html  
+[\[4\]]: https://math.libretexts.org/Bookshelves/Algebra/Elementary_Algebra_(Ellis_and_Burzynski)/02%3A_Basic_Properties_of_Real_Numbers/2.04%3A_Properties_of_the_Real_Numbers  
