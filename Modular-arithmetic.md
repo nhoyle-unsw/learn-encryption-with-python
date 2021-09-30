@@ -6,7 +6,7 @@ Although it sounds very technical modulus is a pretty simple concept. We all kno
 - 10 mod 5 = 0 (no remainder)
 [\[1\]]
 
-### Python code example
+### Run the Python code example
 ```console
 $ python rsa_demo.py mod  -a 10 -b 3
 1
@@ -143,7 +143,7 @@ Let's start at 1 and work our way up (there is no point starting a zero because 
 1. (19 x 3) mod 7 => **57 mod 7** = **1** **Yay!** no need to go any further. Let's stop here.
 (see [\[2\]]). It is not surprising that we see this repeating every 7th iteration as we are using modulo 7.
 
-### Python code example (the long way)
+### Run the Python code example (do it the long way)
 We can use the python program to calculate each of the steps above:
 ```console
 $ python rsa_demo.py mod -a 3 -b 7
@@ -158,7 +158,7 @@ $ python rsa_demo.py mod -a 15 -b 7
 1
 ```
 
-## More formal definition
+## More formal definition of inverse modulud
 The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows:
 
 > The modular multiplicative inverse is an integer **x** such that:  
@@ -171,7 +171,7 @@ The example definition above was in order to show a simple algorithm for calcula
 >
 [\[2\]]
 
-### Python code example (the short way)
+### Run the Python code example (the quick way to get the inverse modulus)
 Here is a naive implementation of finding the mod inverse of a number, it uses the method above where it keeps searching until it fonds a 1 - OR it gives up if it doesn't find anything:  
 **Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29
 Here is an example of how to run the code:
@@ -181,7 +181,6 @@ Here is an example of how to run the code:
 We can also try to find answers that do not exist (it returns the answer None in this case):  
   $ python rsa_demo.py modinv -a 3 -m 6       
   **None**
-
 
 ```console
 $ python rsa_demo.py modinv_euclid -a 3 -m 7 
