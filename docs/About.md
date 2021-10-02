@@ -1,4 +1,4 @@
-Welcome to the learn-encryption-with-some-python wiki!
+# Welcome to Learn Encryption with Python!
 
 The intention of this repository is to document my journey through a self-guided project to learn the mathematics of encryption and to provide a learning resource for anyone with a similar goal or interest.
 
