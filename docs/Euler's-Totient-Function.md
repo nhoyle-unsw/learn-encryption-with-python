@@ -87,7 +87,7 @@ So, φ(N) = φ(p.q) = φ(p) . φ(q) = (p-1).(q-1)
 
 ## Phi of all numbers to 150 plotted on a graph
 
-![Integers, Factoring and Prime Numbers](https://raw.githubusercontent.com/wiki/nhoyle-unsw/learn-encryption-with-python/images/plot-phi-of-x-annotated.png)
+![Integers, Factoring and Prime Numbers](./images/plot-phi-of-x-annotated.png)
 
 ## Mathematics
 
