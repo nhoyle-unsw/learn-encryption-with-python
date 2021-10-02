@@ -1,3 +1,16 @@
+## Integers Factors and Prime Numbers
+
+<nav>
+  <ul>
+    <li><a href="./index">Index</a></li>
+    <li><a href="./About">About</a></li>
+    <!-- <li><a href="./What-is-cryptography">What is cryptography</a></li> -->
+    <li><a href="./Integer-Factors-and-Prime-Numbers"><strong>Integers, Factors and Prime Numbers</strong></a></li>
+    <li><a href="./Modular-arithmetic">Modular arithmetic</a></li>
+    <li><a href="./Euler's-Totient-Function">Euler's Totient Functions</a></li>
+  </ul>
+</nav>
+
 Prime numbers (along with some mathematics) are used in RSA encryption to create encryption and decryption keys. They are the reason RSA is such a powerful encryption algorithm. So, it is helpful for us to understand what integers are, what prime numbers are and some of their properties.
 
 ## Integers
@@ -28,7 +41,7 @@ By definition, a prime number must have two distinct factors and 1 only has one 
 
 This infographic shows all of these concepts for the integers from 1 to 31.
 
-![Integers, Factoring and Prime Numbers](https://raw.githubusercontent.com/wiki/nhoyle-unsw/learn-encryption-with-python/images/prime-factors.png)
+![Integers, Factoring and Prime Numbers](./images/prime-factors.png)
 
 ## Co-prime
 When a number shares no factors with another number other than 1 they are said to be **coprime**.
