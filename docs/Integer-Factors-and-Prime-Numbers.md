@@ -28,7 +28,7 @@ By definition, a prime number must have two distinct factors and 1 only has one 
 
 This infographic shows all of these concepts for the integers from 1 to 31.
 
-![Integers, Factoring and Prime Numbers](https://raw.githubusercontent.com/wiki/nhoyle-unsw/learn-encryption-with-python/images/prime-factors.png)
+![Integers, Factoring and Prime Numbers](./images/prime-factors.png)
 
 ## Co-prime
 When a number shares no factors with another number other than 1 they are said to be **coprime**.
