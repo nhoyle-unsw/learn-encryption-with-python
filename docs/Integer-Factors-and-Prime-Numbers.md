@@ -1,4 +1,4 @@
-Integers Factors and Prime Numbers
+## Integers Factors and Prime Numbers
 
 <nav>
   <ul>
