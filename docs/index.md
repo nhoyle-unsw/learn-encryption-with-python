@@ -2,7 +2,7 @@
 
 <nav>
   <ul>
-    <li><a href="./index"><strong>Index</strong></li>
+    <li><a href="./index"><strong>Index</strong></a></li>
     <li><a href="./Home">Home/About</a></li>
     <li><a href="./What-is-cryptography">What is cryptography</a></li>
     <li><a href="./Euler's-Totient-Function">Euler's Totient Functions</a></li>
