@@ -55,16 +55,49 @@ An example is 21 and 22. you can see from the diagram that:
 ## Python examples
 
 ### Find prime numbers
-[Ctrl-click here to run this python code](https://onlinegdb.com/mBlQVi5R2)
 
-```python
-print("Hello World")
-print("Hello World Again")
+```console
+$ python rsa_demo.py prime -n 0
+False
+
+$ python rsa_demo.py prime -n 1
+False
+
+$ python rsa_demo.py prime -n 2
+True
+
+$ python rsa_demo.py prime -n 3
+True
+
+$ python rsa_demo.py prime -n 4
+False
+
+$ python rsa_demo.py prime -n 5
+True
+
+$ python rsa_demo.py prime -n 127
+True
+
+$ python rsa_demo.py prime -n 123456789
+False
+
+$ python rsa_demo.py prime -n 1234577  
+True
+
 ```
 
-### Calculate factors of numbers
-[insert code here]
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/primes.py#L8
 
+### Calculate factors of numbers
+
+```console
+$ python rsa_demo.py factors -n 5
+1
+
+$ python rsa_demo.py factors -n 24
+1 2 3 4 6 8 12 
+```
+**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/factors.py#L36
 
 ## References
 [1] https://www.mathsisfun.com/definitions/coprime.html
