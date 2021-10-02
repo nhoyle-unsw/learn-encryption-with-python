@@ -45,24 +45,18 @@ I may change the name near the end of the project to something more snappy.
 
 ## References (so far)
 
-Cryptography and Python:
-Book: [Implementing+Cryptography+Using+Python](https://www.wiley.com/en-au/Implementing+Cryptography+Using+Python-p-9781119612216) 
+Cryptography and Python book: [Implementing+Cryptography+Using+Python](https://www.wiley.com/en-au/Implementing+Cryptography+Using+Python-p-9781119612216) 
 
-Addition, Subtraction, Multiplication, Division, Roots, Exponentiation, Logarithm
-[Arithmetic_operations](https://en.wikipedia.org/wiki/Template:Arithmetic_operations)
+Addition, Subtraction, Multiplication, Division, Roots, Exponentiation, Logarithm: [Arithmetic_operations](https://en.wikipedia.org/wiki/Template:Arithmetic_operations)
 
-Integer Factorisation
-[Integer_factorization](https://en.wikipedia.org/wiki/Integer_factorization)
+Integer Factorisation: [Integer_factorization](https://en.wikipedia.org/wiki/Integer_factorization)
 
-Prime Factorisation:
-[make-your-own-prime-factorization](https://blog.jgc.org/2012/04/make-your-own-prime-factorization.html)
+Prime Factorisation: [make-your-own-prime-factorization](https://blog.jgc.org/2012/04/make-your-own-prime-factorization.html)
 
-Factors and Prime Factors:
-[factors-of-26](https://byjus.com/maths/factors-of-26/)
-[factors-all-tool](https://www.mathsisfun.com/numbers/factors-all-tool.html)
+Factors and Prime Factors:  
+[factors-of-26](https://byjus.com/maths/factors-of-26/)  
+[factors-all-tool](https://www.mathsisfun.com/numbers/factors-all-tool.html)  
 
-Prime Numbers:
-[Prime Numbers}(https://en.wikipedia.org/wiki/Prime_number)
+Prime Numbers: [Prime Numbers}(https://en.wikipedia.org/wiki/Prime_number)
 
-Euler's Totient Function
-Video: [Euler's Totient Function](https://youtu.be/qa_hksAzpSg)
+Euler's Totient Function: Video: [Euler's Totient Function](https://youtu.be/qa_hksAzpSg)
