@@ -1,5 +1,16 @@
 # Modular arithmetic
 
+<nav>
+  <ul>
+    <li><a href="./index">Index</a></li>
+    <li><a href="./About">About</a></li>
+    <!-- <li><a href="./What-is-cryptography">What is cryptography</a></li> -->
+    <li><a href="./Integer-Factors-and-Prime-Numbers">Integer Factors and Prime Numbers</a></li>
+    <li><a href="./Modular-arithmetic"><strong>Modular arithmetic</strong></a></li>
+    <li><a href="./Euler's-Totient-Function">Euler's Totient Functions</a></li>
+  </ul>
+</nav>
+
 ## Modulus - Mod
 
 Although it sounds very technical modulus is a pretty simple concept. We all know what division is - how many times a number goes into another number. Well, with integers (whole numbers) when you do division sometimes you have a remainder. e.g. 10 divided by 3 goes 3 times and a remainder of 1. The remainder is the modulus <sup>[\[1\]]</sup>. So we have:
