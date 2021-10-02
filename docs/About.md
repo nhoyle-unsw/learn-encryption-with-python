@@ -1,4 +1,4 @@
-# Welcome to Learning Encryption with Python
+## Welcome to Learning Encryption with Python
 
 <nav>
   <ul>
