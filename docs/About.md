@@ -1,4 +1,17 @@
-# Welcome to Learn Encryption with Python!
+# Welcome to Learning Encryption with Python
+
+<nav>
+  <ul>
+    <li><a href="./index">Index</a></li>
+    <li><a href="./About"><strong>About</strong></a></li>
+    <!-- <li><a href="./What-is-cryptography">What is cryptography</a></li> -->
+    <li><a href="./Integer-Factors-and-Prime-Numbers">Integer Factors and Prime Numbers</a></li>
+    <li><a href="./Modular-arithmetic">Modular arithmetic</a></li>
+    <li><a href="./Euler's-Totient-Function">Euler's Totient Functions</a></li>
+  </ul>
+</nav>
+
+## Intention
 
 The intention of this repository is to document my journey through a self-guided project to learn the mathematics of encryption and to provide a learning resource for anyone with a similar goal or interest.
 
