@@ -43,7 +43,9 @@ I will use open-source/free products only to create the content so that anyone c
 
 I may change the name near the end of the project to something more snappy.
 
-## References (so far)
+## References
+
+See reference sections at the bottom of each page also.
 
 Cryptography and Python book: [Implementing+Cryptography+Using+Python](https://www.wiley.com/en-au/Implementing+Cryptography+Using+Python-p-9781119612216) 
 
@@ -57,6 +59,6 @@ Factors and Prime Factors:
 [factors-of-26](https://byjus.com/maths/factors-of-26/)  
 [factors-all-tool](https://www.mathsisfun.com/numbers/factors-all-tool.html)  
 
-Prime Numbers: [Prime Numbers}(https://en.wikipedia.org/wiki/Prime_number)
+Prime Numbers: [Prime Numbers](https://en.wikipedia.org/wiki/Prime_number)
 
 Euler's Totient Function: Video: [Euler's Totient Function](https://youtu.be/qa_hksAzpSg)
