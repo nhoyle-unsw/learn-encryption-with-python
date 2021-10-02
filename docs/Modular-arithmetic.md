@@ -1,4 +1,4 @@
-# Modular arithmetic
+## Modular arithmetic
 
 <nav>
   <ul>
