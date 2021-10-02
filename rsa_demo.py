@@ -61,6 +61,9 @@ def main():
     elif "modinv_euler" == args.command:
         print(modulus.mod_mul_inv_euler(args.a, args.m))
         return 0
+    elif "factors" == args.command:
+        print(factors.factors(args.n))
+        return 0
     elif "gcd" == args.command:
         print(factors.gcd(args.a, args.b))
         return 0

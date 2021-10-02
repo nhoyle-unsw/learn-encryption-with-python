@@ -33,21 +33,20 @@ def gcd(a, b):
     return b  # we return the last remainder found which is b. If no remainder is found at all then the original b is the common factor
 
 
-def have_factors(a, b):
-    """[summary]
+def factors(n):
+    """[list the factors of two numbers]
 
     Args:
-        a ([int]): [an integer to find factors with b]
-        b ([int]): [an integer to find factors with a]
+        n ([int]): [integer to find factors of]
 
     Returns:
-        [boolean]: [True if it has any factors other than 1 and itself, False otherwise]
+        [String]: [the list of factors of n]
     """
-    smallest = a if a <= b else b
-    for i in range(2, smallest+1):
-        if mod(i, a) == 0 and mod(i, b) == 0:
-            return False
-    return True
+    factors_of_n = ""
+    for i in range(1, n // 2 + 1):
+        if mod(n, i) == 0:
+            factors_of_n += str(i) + " "
+    return factors_of_n
 
 
 def gcdr(a, b):
