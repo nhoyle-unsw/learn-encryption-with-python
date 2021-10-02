@@ -1,4 +1,4 @@
-# Euler's Totient Function
+## Euler's Totient Function
 
 <nav>
   <ul>
