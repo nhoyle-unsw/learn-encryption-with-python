@@ -14,6 +14,7 @@ import modulus
 import factors
 import euler
 import primes
+import rsa
 
 REAL_FILENAME = "confession_real.txt"
 REAL_FILE_SHA256 = "ee2b34b775d70cd1e23ff42a7ed39731419a443c4f08b062e96015e6e951588d"
@@ -32,6 +33,14 @@ parser.add_argument("-n", type=int,
                     help="value for n")
 parser.add_argument("-m", type=int,
                     help="value for m")
+parser.add_argument("-p", type=int,
+                    help="value for p - prime number")
+parser.add_argument("-q", type=int,
+                    help="value for q - prime number")
+parser.add_argument("-e", type=int,
+                    help="value for e - encryption key")
+parser.add_argument("-t", type=int,
+                    help="value for t - plaint text as an integer")
 parser.add_argument("-d", "--debug", action="store_true",
                     help="Output debug statements (you need to press Enter to see each line of the output)")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
@@ -75,6 +84,9 @@ def main():
         return 0
     elif "phi" == args.command:
         print(euler.phi(args.n))
+        return 0
+    elif "rsa" == args.command:
+        print(rsa.rsa(args.p, args.q, args.e, args.t))
         return 0
 
 
