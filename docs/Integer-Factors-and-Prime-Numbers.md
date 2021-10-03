@@ -8,6 +8,7 @@
     <li><a href="./Integer-Factors-and-Prime-Numbers"><strong>Integers, Factors and Prime Numbers</strong></a></li>
     <li><a href="./Modular-arithmetic">Modular arithmetic</a></li>
     <li><a href="./Euler's-Totient-Function">Euler's Totient Functions</a></li>
+    <li><a href="./rsa">RSA Encryption and Decrption</a></li>
   </ul>
 </nav>
 
@@ -44,20 +45,23 @@ This infographic shows all of these concepts for the integers from 1 to 31.
 ![Integers, Factoring and Prime Numbers](./images/prime-factors.png)
 
 ## Co-prime
+
 When a number shares no factors with another number other than 1 they are said to be **coprime**.
 
 An example is 21 and 22. you can see from the diagram that:
-* 21 has factors **1**, 3, 7, 21
-* 22 has factors **1**, 2, 11, 22
-* They only share a factor of **1**, so they are coprime.
-21 is not a prime number and neither is 22 but they are **coprime**.
+
+- 21 has factors **1**, 3, 7, 21
+- 22 has factors **1**, 2, 11, 22
+- They only share a factor of **1**, so they are coprime.
+  21 is not a prime number and neither is 22 but they are **coprime**.
 
 ## Python examples
 
 ### Find prime numbers
+
 You can run these examples online from here: [online-python-link]
 
-[![online-python][online-python-image]][online-python-link]  
+[![online-python][online-python-image]][online-python-link]
 
 [online-python-link]: https://www.online-python.com/SZCBYGAke8
 [online-python-image]: ./images/online-python.png
@@ -90,7 +94,7 @@ True
 $ python rsa_demo.py prime -n 123456789
 False
 
-$ python rsa_demo.py prime -n 1234577  
+$ python rsa_demo.py prime -n 1234577
 True
 
 ```
@@ -98,16 +102,20 @@ True
 **Source code:** [Source code at guthub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/primes.py#L8)
 
 ### Calculate factors of numbers
+
 You can run these examples online from here: [online-python-link]  
 Or on your computer like this:
+
 ```console
 $ python rsa_demo.py factors -n 5
 1
 
 $ python rsa_demo.py factors -n 24
-1 2 3 4 6 8 12 
+1 2 3 4 6 8 12
 ```
+
 **Source code:** [Source code at guthub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/factors.py#L36)
 
 ## References
+
 [1] https://www.mathsisfun.com/definitions/coprime.html

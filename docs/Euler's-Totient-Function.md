@@ -8,6 +8,7 @@
     <li><a href="./Integer-Factors-and-Prime-Numbers">Integers, Factors and Prime Numbers</a></li>
     <li><a href="./Modular-arithmetic">Modular arithmetic</a></li>
     <li><a href="./Euler's-Totient-Function"><strong>Euler's Totient Function</strong></a></li>
+    <li><a href="./rsa">RSA Encryption and Decrption</a></li>
   </ul>
 </nav>
 
