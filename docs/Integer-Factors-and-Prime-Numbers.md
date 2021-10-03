@@ -57,7 +57,7 @@ An example is 21 and 22. you can see from the diagram that:
 ### Find prime numbers
 You can run these examples online from here: [online-python.com][1] 
 [[[./images/online-python.png]]][1]
-[1] (https://www.online-python.com/5MU3XJYxOz)  
+[1]: (https://www.online-python.com/5MU3XJYxOz)  
 
 **Or** if you have the github code checked out to your computer you can run this from the command line like this:
 ```console
