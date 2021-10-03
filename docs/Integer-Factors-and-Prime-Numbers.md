@@ -63,7 +63,7 @@ You can run these examples online from here: [online-python-link]
 [online-python-image]: ./images/online-python.png
 [how-to-link-with-an-image]: https://meta.stackexchange.com/questions/2133/whats-the-recommended-syntax-for-an-image-with-a-link
 
-**Or** if you have the example python code checked out from here: (https://github.com/nhoyle-unsw/learn-encryption-with-python/) you can run this from the command line like this:
+**Or** if you have the example python code checked out from here: [](https://github.com/nhoyle-unsw/learn-encryption-with-python/) you can run this from the command line like this:
 
 ```console
 $ python rsa_demo.py prime -n 0
@@ -95,10 +95,11 @@ True
 
 ```
 
-**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/primes.py#L8
+**Source code:** [](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/primes.py#L8)
 
 ### Calculate factors of numbers
-
+You can run these examples online from here: [online-python-link]
+Or on your computer:
 ```console
 $ python rsa_demo.py factors -n 5
 1
@@ -106,7 +107,7 @@ $ python rsa_demo.py factors -n 5
 $ python rsa_demo.py factors -n 24
 1 2 3 4 6 8 12 
 ```
-**Source code:** https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/factors.py#L36
+**Source code:** [](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/factors.py#L36)
 
 ## References
 [1] https://www.mathsisfun.com/definitions/coprime.html
