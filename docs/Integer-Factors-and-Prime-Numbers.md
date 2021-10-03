@@ -29,7 +29,7 @@ Factorising is where you have an answer to multiplication and want to find which
 
 Numbers like 20 that can be made up by multiplying other integers together are called **composite numbers** because they are said to be composed of other integers. All of the boring black numbers in the diagram are composite numbers.
 
-**Prime numbers** are numbers that cannot be broken down into a multiplication of other integers. A prime number only has two factors: Only 1 and the number itself are factors of a prime number. An example is the number 5. You can not multiply two other integers together to get 5, only 1 x 5 = 5. So its only factors are 1 and itself. This makes it a **prime number**. All the prime numbers in the diagram are coloured have a circle around them because they are very special. They are represented as colourful dots arranged into **unique snowflakes**.
+**Prime numbers** are numbers that cannot be broken down into a multiplication of other integers. A prime number has only two factors: 1 and the number itself are the only factors of a prime number. An example is the number 5. You can not multiply two other integers together to get 5, only 1 x 5 = 5. So its only factors are 1 and itself. This makes it a **prime number**. All the prime numbers in the diagram below are coloured and have a circle around them because they are very special. They are represented as colourful dots arranged into **unique snowflakes**.
 
 You can see in the diagram that all of the non-prime integers can be made up by multiplying prime numbers together. This is what makes prime numbers so special, they are unique and can not be broken down into smaller multiples.
 
@@ -55,7 +55,11 @@ An example is 21 and 22. you can see from the diagram that:
 ## Python examples
 
 ### Find prime numbers
+You can run these examples online from here: [online-python.com][1] 
+[[[./images/online-python.png]]][1]
+[1] (https://www.online-python.com/5MU3XJYxOz)  
 
+**Or** if you have the github code checked out to your computer you can run this from the command line like this:
 ```console
 $ python rsa_demo.py prime -n 0
 False
