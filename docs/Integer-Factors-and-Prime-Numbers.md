@@ -63,7 +63,7 @@ You can run these examples online from here: [online-python-link]
 [online-python-image]: ./images/online-python.png
 [how-to-link-with-an-image]: https://meta.stackexchange.com/questions/2133/whats-the-recommended-syntax-for-an-image-with-a-link
 
-**Or** if you have the example python code checked out from here: https://github.com/nhoyle-unsw/learn-encryption-with-python/ you can run this from the command line like this:
+**Or** if you have the example python code checked out from here: (https://github.com/nhoyle-unsw/learn-encryption-with-python/) you can run this from the command line like this:
 
 ```console
 $ python rsa_demo.py prime -n 0
