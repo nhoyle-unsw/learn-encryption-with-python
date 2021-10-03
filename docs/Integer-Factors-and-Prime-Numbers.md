@@ -55,11 +55,16 @@ An example is 21 and 22. you can see from the diagram that:
 ## Python examples
 
 ### Find prime numbers
-You can run these examples online from here: [online-python.com][1] 
-[[[./images/online-python.png]]][1]
-[1]: (https://www.online-python.com/5MU3XJYxOz)  
+You can run these examples online from here: [online-python-link]
 
-**Or** if you have the github code checked out to your computer you can run this from the command line like this:
+[![online-python][online-python-image]][online-python-link]  
+
+[online-python-link]: https://www.online-python.com/SZCBYGAke8 online-python
+[online-python-image]: ./images/online-python.png
+[how-to-link-with-an-image]: https://meta.stackexchange.com/questions/2133/whats-the-recommended-syntax-for-an-image-with-a-link
+
+**Or** if you have the example python code checked out from here: https://github.com/nhoyle-unsw/learn-encryption-with-python/ you can run this from the command line like this:
+
 ```console
 $ python rsa_demo.py prime -n 0
 False
