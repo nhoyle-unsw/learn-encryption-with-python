@@ -2,12 +2,6 @@
   "folders": [
 	{
 		"path": "."
-	},
-	{
-		"path": "..\\learn-encryption-with-python.wiki"
-	},
-	{
-		"path": "..\\fake-confessions-python"
 	}
 ],
 "settings": {

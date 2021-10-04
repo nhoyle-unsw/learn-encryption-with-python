@@ -1,5 +1,3 @@
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-
 ## Modular arithmetic
 
 <nav>

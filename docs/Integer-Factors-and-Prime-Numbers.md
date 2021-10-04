@@ -1,5 +1,3 @@
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-
 ## Integers Factors and Prime Numbers
 
 <nav>
