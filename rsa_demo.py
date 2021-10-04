@@ -24,7 +24,7 @@ FAKE_FILE_SHA256 = "44026d38d615a11633ed19548eeaea15b38e99fcc670277a42c80a5edc26
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "command", help="the command you want to run: mod, gcd, mod_mul_inv")
+    "command", help="the command you want to run: mod, gcd, mod_mul_inv, rsa")
 parser.add_argument("-a", type=int,
                     help="value for a")
 parser.add_argument("-b", type=int,
@@ -86,7 +86,7 @@ def main():
         print(euler.phi(args.n))
         return 0
     elif "rsa" == args.command:
-        print(rsa.rsa(args.p, args.q, args.e, args.t))
+        rsa.rsa(args.p, args.q, args.e, args.t)
         return 0
 
 

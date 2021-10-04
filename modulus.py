@@ -10,7 +10,7 @@ from printd import printd
 
 
 def mod(a, b):
-    """find a mod b."""
+    """find a mod b. But in a Naive way (subreacting till only remainder left. This takes ages for large numbers)"""
     printd("find a mod b:", a, "mod", b)
     if b == 0:
         # can not divide by zero

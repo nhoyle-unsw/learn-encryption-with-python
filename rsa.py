@@ -1,8 +1,8 @@
 # prime
-
+import math
 from printd import printd
 from factors import gcd
-from modulus import mod, mod_mul_inv_naive
+from modulus import *
 
 
 def guess_encryption_key(m):
@@ -14,7 +14,8 @@ def guess_encryption_key(m):
     Returns:
         [int]: [a suitable encryption key]
     """
-    return 37
+    # https://cacr.uwaterloo.ca/hac/ and https://cacr.uwaterloo.ca/hac/about/chap8.pdf page 291 "8.9 Note (small encryption exponents)"
+    return 2 ** 16 + 1
 
 
 def rsa(p, q, e, plaintext):
@@ -31,18 +32,27 @@ def rsa(p, q, e, plaintext):
     # modulus n:
     n = p * q
     m = (p-1) * (q-1)
-    print("n:", n)
-    print("m:", m)
-    print("e:", e)
-    if gcd(m, e) != 1:
+    print("p =", p)
+    print("q =", q)
+    print("n = p * q =", n)
+    print("m = (p-1) * (q-1) =", m)
+    print("e must be chosen as co-prime with m, you chose e =", e)
+    gcd_m_e = math.gcd(m, e)
+    if gcd_m_e != 1:
         print("Error: your encryption key e:",
-              e, "is nopt co-prime with m:", m)
+              e, "is not co-prime with m:", m)
         print("Perhaps try a prime number like:", guess_encryption_key(m))
         return None
-    d = mod_mul_inv_naive(e, m)
-    print("d:", d)
+    else:
+        print("Check passed: your encryption key e:", e,
+              "has no common factors with m:", m, "so we can proceed...")
+    # decryption key d:
+    d = mod_mul_inv_euclid(e, m)
+    print("decryption key: find d that satisfies: e . d ≅ 1 (mod m)")
+    print("decryption key: find d that satisfies:",
+          e, ". d ≅ 1 (mod", m, "), d =", d)
     encrypt_decrypt(e, d, n, plaintext)
-    return d
+    return None
 
 
 def encrypt_decrypt(e, d, n, plaintext):
@@ -56,14 +66,15 @@ def encrypt_decrypt(e, d, n, plaintext):
     Returns:
         [type]: [description]
     """
-    # x^e  nod n
+    # x^e mod n
     x = plaintext
     print("plaintext x:", x)
-    print("encrypt: x ^ e mod n:", x, "^", e, "mod", n)
-    print("python check:", (x ^ e) % n)
-    encrypted = mod(x ^ e, n)
-    print("encrypted:", encrypted)
+    print("encrypt: y = x ^ e mod n:", x, "^", e, "mod", n)
+    # https://www.geeksforgeeks.org/pow-in-python/ and https://www.geeksforgeeks.org/modular-exponentiation-python/
+    encrypted = pow(x, e, n)
+    print("encrypted y =", encrypted)
     y = encrypted
-    decrypted = mod(y ^ d, n)
-    print("decrypted:", decrypted)
+    print("decrypt: x = y ^ d mod n:", y, "^", d, "mod", n)
+    decrypted = pow(y, d, n)
+    print("decrypted x =", decrypted)
     return None

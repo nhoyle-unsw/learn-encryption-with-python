@@ -170,7 +170,7 @@ $ python rsa_demo.py mod -a 15 -b 7
 1
 ```
 
-## More formal definition of inverse modulud
+## More formal definition of inverse modulus
 
 The example definition above was in order to show a simple algorithm for calculating the multiplicative modular inverse. A more formal definition can be stated as follows:
 
