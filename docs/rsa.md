@@ -6,6 +6,6 @@
 
 Todo
 
-## RSA Dencryption
+## RSA Decryption
 
 Todo
