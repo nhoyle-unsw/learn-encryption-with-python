@@ -59,7 +59,7 @@ Todo
 
 ## References
 
-[^1]: https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+[^1]: <https://en.wikipedia.org/wiki/RSA_(cryptosystem)>
 [^2]: https://en.wikipedia.org/wiki/Ron_Rivest
 [^3]: https://en.wikipedia.org/wiki/Adi_Shamir
 [^4]: https://en.wikipedia.org/wiki/Leonard_Adleman
