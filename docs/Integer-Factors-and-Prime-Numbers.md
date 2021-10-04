@@ -1,16 +1,6 @@
 ## Integers Factors and Prime Numbers
 
-<nav>
-  <ul>
-    <li><a href="./index">Index</a></li>
-    <li><a href="./About">About</a></li>
-    <!-- <li><a href="./What-is-cryptography">What is cryptography</a></li> -->
-    <li><a href="./Integer-Factors-and-Prime-Numbers"><strong>Integers, Factors and Prime Numbers</strong></a></li>
-    <li><a href="./Modular-arithmetic">Modular arithmetic</a></li>
-    <li><a href="./Euler's-Totient-Function">Euler's Totient Functions</a></li>
-    <li><a href="./rsa">RSA Encryption and Decrption</a></li>
-  </ul>
-</nav>
+{% include navigation.html %}
 
 Prime numbers (along with some mathematics) are used in RSA encryption to create encryption and decryption keys. They are the reason RSA is such a powerful encryption algorithm. So, it is helpful for us to understand what integers are, what prime numbers are and some of their properties.
 
