@@ -46,7 +46,8 @@ Alice can create an RSA public key and private key using the following method (w
 
 ## RSA Encryption - Bob using public key to encrypt
 
-Todo
+1. Bob has a message "Hello Alice" to encrypt and send to Alice
+1. Convert the message to a number: convert
 
 ## RSA Decryption - Alice using private key to decrypt
 
@@ -66,3 +67,4 @@ Todo
 [^6]: https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment
 [^7]: https://cacr.uwaterloo.ca/hac/
 [^8]: https://cacr.uwaterloo.ca/hac/about/chap8.pdf
+[^9]: https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python

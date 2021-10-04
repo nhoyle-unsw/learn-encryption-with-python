@@ -15,6 +15,7 @@ import factors
 import euler
 import primes
 import rsa
+import converter
 
 REAL_FILENAME = "confession_real.txt"
 REAL_FILE_SHA256 = "ee2b34b775d70cd1e23ff42a7ed39731419a443c4f08b062e96015e6e951588d"
@@ -55,6 +56,8 @@ parser.add_argument("-x", type=int,
                     help="value for x - plainttext as an integer")
 parser.add_argument("-y", type=int,
                     help="value for y - ciphertext as an integer")
+parser.add_argument("-t",
+                    help="value for t - text to be converted to an integer")
 parser.add_argument("-D", "--debug", action="store_true",
                     help="Output debug statements (you need to press Enter to see each line of the output)")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
@@ -107,6 +110,12 @@ def main():
         return 0
     elif "rsa-decrypt" == args.command:
         rsa.decrypt(args.y, args.d, args.n)
+        return 0
+    elif "convert_to_number" == args.command:
+        converter.convert_to_number(args.t)
+        return 0
+    elif "convert_to_text" == args.command:
+        converter.convert_to_text(args.t)
         return 0
 
 
