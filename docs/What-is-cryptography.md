@@ -2,7 +2,7 @@
 
 {% include navigation.html %}
 
-Mention 1 of cryptography [^cryptography]
+Mention 1 of cryptography one [^cryptography]
 
 Some text[^1].
 
@@ -10,7 +10,7 @@ Some other text[^2].
 
 The identifier in the square brackets does not have to be numeric[^my_footnote].
 
-Mention 2 of cryptography [^cryptography]
+Mention 2 of cryptography two [^cryptography]
 
 ## Footnotes
 
