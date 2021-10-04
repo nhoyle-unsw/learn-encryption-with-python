@@ -38,6 +38,7 @@ def rsa(p, q, e, plaintext):
     print("m = (p-1) * (q-1) =", m)
     print("e must be chosen as co-prime with m, you chose e =", e)
     gcd_m_e = math.gcd(m, e)
+    print("math.gcd(m, e)=", gcd_m_e)
     if gcd_m_e != 1:
         print("Error: your encryption key e:",
               e, "is not co-prime with m:", m)
@@ -51,30 +52,50 @@ def rsa(p, q, e, plaintext):
     print("decryption key: find d that satisfies: e . d ≅ 1 (mod m)")
     print("decryption key: find d that satisfies:",
           e, ". d ≅ 1 (mod", m, "), d =", d)
-    encrypt_decrypt(e, d, n, plaintext)
-    return None
+    x = plaintext
+    encrypted = encrypt(x, e, n)
+    y = encrypted
+    decrypted = decrypt(y, d, n)
+    if(decrypted != plaintext):
+        print("Error: unable to encrypt/decrypt without loss. Your plaintext needs to be less than n:", n)
+    return y
 
 
-def encrypt_decrypt(e, d, n, plaintext):
-    """[encrypt and decrypt a number]
+def encrypt(plaintext, e, n):
+    """[encrypt a message]
 
     Args:
-        e ([type]): [description]
-        d ([type]): [description]
-        n ([type]): [description]
+        plaintext ([int]): [The plaintext to be encrypted]
+        e ([int]): [The encryption key]
+        n ([int]): [modulus]
+
 
     Returns:
-        [type]: [description]
+        [int]: [y = ciphertext]
     """
-    # x^e mod n
     x = plaintext
     print("plaintext x:", x)
-    print("encrypt: y = x ^ e mod n:", x, "^", e, "mod", n)
+    print("ciphertext: y = x ^ e mod n:", x, "^", e, "mod", n)
     # https://www.geeksforgeeks.org/pow-in-python/ and https://www.geeksforgeeks.org/modular-exponentiation-python/
-    encrypted = pow(x, e, n)
-    print("encrypted y =", encrypted)
-    y = encrypted
+    y = pow(x, e, n)
+    print("ciphertext y =", y)
+    return y
+
+
+def decrypt(ciphertext, d, n):
+    """[decrypt a message]
+
+    Args:
+        ciphertext ([int]): [The ciphertext to be decrypted]
+        d ([int]): [The decryption key]
+        n ([int]): [modulus]
+
+    Returns:
+        [int]: [x = plaintext]
+    """
+    y = ciphertext
+    print("ciphertext y to decrypt =", y)
     print("decrypt: x = y ^ d mod n:", y, "^", d, "mod", n)
-    decrypted = pow(y, d, n)
-    print("decrypted x =", decrypted)
-    return None
+    x = pow(y, d, n)
+    print("plaintext x =", x)
+    return x

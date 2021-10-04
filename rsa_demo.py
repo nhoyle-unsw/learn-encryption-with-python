@@ -24,24 +24,38 @@ FAKE_FILE_SHA256 = "44026d38d615a11633ed19548eeaea15b38e99fcc670277a42c80a5edc26
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "command", help="the command you want to run: mod, gcd, mod_mul_inv, rsa")
+    "command", help="""the command you want to run: \n
+       gcd -a -b \n
+       factors -n 24
+       mod -a 10 -b 3 \n
+       modinv -a 3 -m 7 \n
+       modinv_euclid -a 3 -m 7 \n
+       phi -n 13
+       rsa -p 557 -q 839 -e 7825 -x 181901\n
+       rsa-encrypt -x 181901 -e 7825 -n 467323 
+       rsa-decrypt -y 183780 -d 214833 -n 467323
+       """)
 parser.add_argument("-a", type=int,
-                    help="value for a")
+                    help="value for a - in a mod b")
 parser.add_argument("-b", type=int,
-                    help="value for b")
+                    help="value for b - in a mod b")
 parser.add_argument("-n", type=int,
-                    help="value for n")
+                    help="value for n - in factors or phi")
 parser.add_argument("-m", type=int,
-                    help="value for m")
+                    help="value for m - in mod inverse a mod m")
 parser.add_argument("-p", type=int,
                     help="value for p - prime number")
 parser.add_argument("-q", type=int,
                     help="value for q - prime number")
 parser.add_argument("-e", type=int,
                     help="value for e - encryption key")
-parser.add_argument("-t", type=int,
-                    help="value for t - plaint text as an integer")
-parser.add_argument("-d", "--debug", action="store_true",
+parser.add_argument("-d", type=int,
+                    help="value for d - decryption key")
+parser.add_argument("-x", type=int,
+                    help="value for x - plainttext as an integer")
+parser.add_argument("-y", type=int,
+                    help="value for y - ciphertext as an integer")
+parser.add_argument("-D", "--debug", action="store_true",
                     help="Output debug statements (you need to press Enter to see each line of the output)")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
                     action="store_true")
@@ -86,7 +100,13 @@ def main():
         print(euler.phi(args.n))
         return 0
     elif "rsa" == args.command:
-        rsa.rsa(args.p, args.q, args.e, args.t)
+        rsa.rsa(args.p, args.q, args.e, args.x)
+        return 0
+    elif "rsa-encrypt" == args.command:
+        rsa.encrypt(args.x, args.e, args.n)
+        return 0
+    elif "rsa-decrypt" == args.command:
+        rsa.decrypt(args.y, args.d, args.n)
         return 0
 
 
