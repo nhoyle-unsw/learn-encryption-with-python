@@ -17,4 +17,4 @@ Mention 2 of cryptography [^cryptography]
 [^1]: Some footnote.
 [^2]: Other footnote.
 [^my_footnote]: This also works fine.
-[^cryptography]: https://en.wikipedia.org/wiki/History_of_cryptography
+[^cryptography]: [https://en.wikipedia.org/wiki/History_of_cryptography](https://en.wikipedia.org/wiki/History_of_cryptography)
