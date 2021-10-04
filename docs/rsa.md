@@ -60,11 +60,11 @@ Todo
 ## References
 
 [^1]: <https://en.wikipedia.org/wiki/RSA_(cryptosystem)>
-[^2]: https://en.wikipedia.org/wiki/Ron_Rivest
-[^3]: https://en.wikipedia.org/wiki/Adi_Shamir
-[^4]: https://en.wikipedia.org/wiki/Leonard_Adleman
-[^5]: https://en.wikipedia.org/wiki/RSA_problem
-[^6]: https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment
-[^7]: https://cacr.uwaterloo.ca/hac/
-[^8]: https://cacr.uwaterloo.ca/hac/about/chap8.pdf
-[^9]: https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python
+[^2]: <https://en.wikipedia.org/wiki/Ron_Rivest>
+[^3]: <https://en.wikipedia.org/wiki/Adi_Shamir>
+[^4]: <https://en.wikipedia.org/wiki/Leonard_Adleman>
+[^5]: <https://en.wikipedia.org/wiki/RSA_problem>
+[^6]: <https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment>
+[^7]: <https://cacr.uwaterloo.ca/hac/>
+[^8]: <https://cacr.uwaterloo.ca/hac/about/chap8.pdf>
+[^9]: <https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python>
