@@ -207,11 +207,11 @@ Both Match!
 ====== End
 ```
 
-Look! The original plaintext matches the processed text perfectly. That ws only a small example, now lets to a large file with complex characters in it to make sure out code is working as required.
+Look! The original plaintext matches the processed text perfectly. That ws only a small example, now lets do a large file with complex characters in it to make sure our code is working as required.
 
 ### A large complex file
 
-THe final test for the RSA block scheme that has been implemented is to accuratley encrypt and decrypt a complex file. Have look at the example file [here](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt) in which you can see a very complex structure that would be ruined if anything went missing. It is also quite a lot longer than the previous example. Let's cross our fingers for this one. Again, here is the command for encrypting and decrypting the large text file:
+The final test for the RSA block scheme that has been implemented is to accuratley encrypt and decrypt a complex file. Have look at the example file [here](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt) in which you can see a very complex structure that would be ruined if anything went missing. It is also quite a lot longer than the previous example. Let's cross our fingers for this one. Again, here is the command for encrypting and decrypting the large text file:
 
 `encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_long_length.txt`
 
@@ -219,7 +219,7 @@ THe final test for the RSA block scheme that has been implemented is to accuratl
 
 ![python-online-example](./images/python-online-example-rsa-real-3.png)
 
-To see how Darth Vader faired, please run teh example yourself as the output is too long to screenshot.
+To see how Darth Vader fared, please run the example yourself as the output is too long to screenshot.
 
 Or using the code from GitHub like this:
 
@@ -230,10 +230,10 @@ Plaintext file contents - [ and ] are not part of the file:
 [Hello, Alice! How are you today?
 I'm well, thanks, before you ask me.
 
-I'm sure this implementaiton is not secure, it is only for learning and demonstration purposes. You know what they say: "Never roll your own crypto!"
+I'm sure this implementation is not secure, it is only for learning and demonstration purposes. You know what they say: "Never roll your own crypto!"
 
 How about this RSA algorithm for encrypting and decrypting arbitrary text files of any length?
-Amaizing, huh?
+Amazing, huh?
 
 Here are some crazy characters:
 
@@ -260,7 +260,7 @@ OK, so [here is the output I got](https://github.com/nhoyle-unsw/learn-encryptio
 
 ## Fin
 
-That concludes the practical demonstration of RSA being used in a near-real-world example.
+That concludes the practical demonstration of RSA being used in a near-real-world example. I hope you enjoyed learning and participating. Please feel free to raise any issues at: [https://github.com/nhoyle-unsw/learn-encryption-with-python/issues](https://github.com/nhoyle-unsw/learn-encryption-with-python/issues)
 
 **_Remember: Never roll your own crypto_**  
 (unless it is for learning and demonstration purposes)
