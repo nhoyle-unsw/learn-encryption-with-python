@@ -97,8 +97,28 @@ And since we know that the Phi of a prime number is the number minus one, then:
 
 We will use this property of two prime numbers and their product later when calculating RSA encryption and decryption.
 
+## Finding Phi(n)
+
+{% include_relative python-online.md %}
+
+Or run these examples from the command line:
+
+```
+$ python rsa_demo.py phi -n 29
+28
+
+$ python rsa_demo.py phi -n 31
+30
+
+$ python rsa_demo.py phi -n 30
+8
+
+```
+
 ## References
 
 [^khan]: <https://youtu.be/qa_hksAzpSg> Khan Academy Labs - Euler's Totient
 [^penn]: <https://www.youtube.com/watch?v=2JY3P3aHUJk> Michael Penn - Euler's Totient
 [^wolfram]: Wolfram Alpha LLC. 2009. Wolfram\|Alpha. <https://www.wolframalpha.com/input/?i=plot+phi+of+x> (access September 12, 2021).
+
+{% include_relative python-online-links.md %}
