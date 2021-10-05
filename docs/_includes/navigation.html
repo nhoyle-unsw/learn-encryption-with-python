@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <!-- <li>{{ page.path }}</li> -->
+    <li {% if page.path contains "index" %} style="font-weight: bold;" {% endif %}><a href="index">Index</a></li>
+    <li {% if page.path contains "About" %} style="font-weight: bold;" {% endif %}>
+      <a href="About">About</a>
+    </li>
+    <!-- <li><a href="./What-is-cryptography">What is cryptography</a></li> -->
+    <li {% if page.path contains "Integer-Factors-and-Prime-Numbers" %} style="font-weight: bold;" {% endif %}>
+      <a href="Integer-Factors-and-Prime-Numbers"
+        >Integers, Factors and Prime Numbers</a
+      >
+    </li>
+    <li {% if page.path contains "Modular-arithmetic" %} style="font-weight: bold;" {% endif %}><a href="Modular-arithmetic">Modular arithmetic</a></li>
+    <li {% if page.path contains "Euler's-Totient-Function" %} style="font-weight: bold;" {% endif %}><a href="Euler's-Totient-Function">Euler's Totient Functions</a></li>
+    <li {% if page.path contains "rsa" %} style="font-weight: bold;" {% endif %}><a href="rsa">RSA Encryption and Decryption</a></li>
+    <li {% if page.path contains "Text-conversion-and-blocks" %} style="font-weight: bold;" {% endif %}><a href="rsa">Text Conversion and Blocks</a></li>
+  </ul>
+</nav>
