@@ -52,6 +52,12 @@ An example is 21 and 22. you can see from the diagram that:
 
 {% include_relative python-online.md %}
 
+Just type the following into the "Command Line Arguments" and click the "> Run" button:
+
+`prime -n 5`
+
+![python-oline-example](./images/python-online-example.png)
+
 **Or** if you have the example python code checked out from here: [learn-encryption-with-python](https://github.com/nhoyle-unsw/learn-encryption-with-python/) you can run this from the command line like this:
 
 ```console
