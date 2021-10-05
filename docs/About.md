@@ -10,7 +10,7 @@ The intention of this repository is to document my journey through a self-guided
 
 There is some mathematics involved in each section, but I will attempt to start of with very general descriptions of concepts using words and diagrams that I have created so that you do not have to delve into the mathematics if you do not feel comfortable with it.
 
-## Technical descrptions
+## Technical descriptions
 
 I will follow up with more technical sections containing the underlying mathematics and some accompanying python code that demonstrates the concepts at a lower level.
 
@@ -52,4 +52,4 @@ Factors and Prime Factors:
 
 Prime Numbers: [Prime Numbers](https://en.wikipedia.org/wiki/Prime_number)
 
-Euler's Totient Function: Video: [Euler's Totient Function](https://youtu.be/qa_hksAzpSg)
+Euler's Totient Function: Video: [Euler's Totient Function introduction](https://youtu.be/qa_hksAzpSg) and <https://www.youtube.com/watch?v=2JY3P3aHUJk> - recommended viewing, Michael Penn's series are excellent.

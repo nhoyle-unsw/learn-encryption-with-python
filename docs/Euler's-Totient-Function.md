@@ -32,9 +32,9 @@ The Phi function takes a number N and counts how many numbers less than N have a
 1. Count the numbers remaining: 1, 3, 5 and 7. So there are 4 numbers that are coprime with 8 that are less than 8
 1. That is your answer: φ(8) = 4
 
-This is quite a diffcult thing to calcuate for large numbers becuase you have to go through all of the numbers and find if they have common factors or not.
+This is quite a difficult thing to calculate for large numbers because you have to go through all of the numbers and find if they have common factors or not.
 
-However, it is easy to find the Phi of a prime number. Becuase prime numbers do not share factors with any other numbers then the Phi of a prime number will always be one less than the prime number (every number less than the prime). You can see this by trying the same steps steps for the number seven. Let's do that now:
+However, it is easy to find the Phi of a prime number. Because prime numbers do not share factors with any other numbers then the Phi of a prime number will always be one less than the prime number (every number less than the prime) [^penn] [^khan]. You can see this by trying the same steps steps for the number seven. Let's do that now:
 
 **e.g. to calculate the Phi of 7 or φ(7)**
 
@@ -54,11 +54,11 @@ However, it is easy to find the Phi of a prime number. Becuase prime numbers do 
    **5**
    **6**
    ~~7~~
-1. Count the numbers that dont have common factors: 6
+1. Count the numbers that don't have common factors: 6
 1. That is your answer: φ(7) = 6
-1. It makes sense becuase 7 is a prime number and will have no common factors with any other number below it.
+1. It makes sense because 7 is a prime number and will have no common factors with any other number below it.
 
-Becuase all prime numbers do not have common factors with other numbers the Phi of a prime number will always be one less than the prime number. So, now if we repersent prime numbers as the letter p, then we can say that the Phi of p is p minus one, or:
+Because all prime numbers do not have common factors with other numbers the Phi of a prime number will always be one less than the prime number. So, now if we represent prime numbers as the letter p, then we can say that the Phi of p is p minus one, or:
 
 φ(p) = p-1
 
@@ -79,6 +79,7 @@ So, φ(N) = φ(p.q) = φ(p) . φ(q) = (p-1).(q-1)
 ## Phi of all numbers to 150 plotted on a graph
 
 ![Integers, Factoring and Prime Numbers](./images/plot-phi-of-x-annotated.png)
+[^wolfram]
 
 ## Mathematics
 
@@ -98,8 +99,6 @@ We will use this property of two prime numbers and their product later when calc
 
 ## References
 
-https://youtu.be/qa_hksAzpSg Khan Academy Labs - Euler's Totient
-
-https://www.youtube.com/watch?v=2JY3P3aHUJk Michael Penn - Euler's Totient
-
-Wolfram Alpha LLC. 2009. Wolfram|Alpha. https://www.wolframalpha.com/input/?i=plot+phi+of+x (access September 12, 2021).
+[^khan]: <https://youtu.be/qa_hksAzpSg> Khan Academy Labs - Euler's Totient
+[^penn]: <https://www.youtube.com/watch?v=2JY3P3aHUJk> Michael Penn - Euler's Totient
+[^wolfram]: Wolfram Alpha LLC. 2009. Wolfram|Alpha. <https://www.wolframalpha.com/input/?i=plot+phi+of+x> (access September 12, 2021).
