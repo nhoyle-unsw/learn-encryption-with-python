@@ -56,7 +56,7 @@ Just type the following into the "Command Line Arguments" and click the "> Run" 
 
 `prime -n 5`
 
-![python-oline-example](./images/python-online-example.png)
+![python-online-example](./images/python-online-example.png)
 
 **Or** if you have the example python code checked out from here: [learn-encryption-with-python](https://github.com/nhoyle-unsw/learn-encryption-with-python/) you can run this from the command line like this:
 

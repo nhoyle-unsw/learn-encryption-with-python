@@ -155,7 +155,9 @@ It is not surprising that we see this repeating every 7th iteration as we are us
 
 ### Run the Python code example (do it the long way)
 
-We can use the python program to calculate each of the steps above:
+{% include_relative python-online.md %}
+
+Or we can use the python program to calculate each of the steps above:
 
 ```console
 $ python rsa_demo.py mod -a 3 -b 7
@@ -187,7 +189,9 @@ The example definition above was in order to show a simple algorithm for calcula
 Here is a naive implementation of finding the mod inverse of a number, it uses the method above where it keeps searching until it fonds a 1 - OR it gives up if it doesn't find anything:  
 **Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29)
 
-Here is an example of how to run the code:
+{% include_relative python-online.md %}
+
+Here is an example of how to run the code yourself:
 
 ```
 $ python rsa_demo.py modinv -a 3 -m 7
@@ -214,3 +218,5 @@ $ python rsa_demo.py modinv_euclid -a 3 -m 7
 [^2]: <https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/>
 [^3]: <http://www.doc.ic.ac.uk/~mrh/330tutor/ch03.html>
 [^4]: <https://math.libretexts.org/Bookshelves/Algebra/Elementary_Algebra_(Ellis_and_Burzynski)/02%3A_Basic_Properties_of_Real_Numbers/2.04%3A_Properties_of_the_Real_Numbers>
+
+{% include_relative python-online-links.md %}
