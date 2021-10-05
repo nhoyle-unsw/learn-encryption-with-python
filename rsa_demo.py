@@ -25,16 +25,17 @@ FAKE_FILE_SHA256 = "44026d38d615a11633ed19548eeaea15b38e99fcc670277a42c80a5edc26
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "command", help="""the command you want to run: \n
-       gcd -a -b \n
-       factors -n 24
-       mod -a 10 -b 3 \n
-       modinv -a 3 -m 7 \n
-       modinv_euclid -a 3 -m 7 \n
-       phi -n 13
-       rsa -p 557 -q 839 -e 7825 -x 181901\n
-       rsa-encrypt -x 181901 -e 7825 -n 467323 
-       rsa-decrypt -y 183780 -d 214833 -n 467323
+    "command", help="""the command you want to run:   \n
+       gcd -a -b,   \n
+       factors -n 24,   \n
+       mod -a 10 -b 3,   \n
+       modinv -a 3 -m 7,   \n
+       modinv_euclid -a 3 -m 7,   \n
+       phi -n 13,   \n
+       rsa -p 557 -q 839 -e 7825,   \n
+       rsa-encrypt -x 181901 -e 7825 -n 467323,   \n
+       rsa-decrypt -y 183780 -d 214833 -n 467323,   \n
+       encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_long_length.txt
        """)
 parser.add_argument("-a", type=int,
                     help="value for a - in a mod b")
