@@ -195,7 +195,7 @@ The example definition above was in order to show a simple algorithm for calcula
 Here is a naive implementation of finding the mod inverse of a number, it uses the method above where it keeps searching until it fonds a 1 - OR it gives up if it doesn't find anything:  
 **Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29)
 
-`modinv -a 3 -m 7`
+`modinv -a 3 -m 7`  
 {% include_relative python-online.md %}
 
 Or, here is an example of how to run the code yourself:
