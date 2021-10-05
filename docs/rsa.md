@@ -135,10 +135,136 @@ The problems we have are:
 
 We can now use all of the parts we have been over to do a complete end to end encryption and decryption. We wil start with generating the public and private keys.
 
+### Generate RSA public and private keys
+
+using the above two prime numbers **_p_** and **_q_** and a chosen encryption key **_d_**. I chose d=65537 because it is co-prime with p.q (the python code will check tht for you). It also might be more efficient for certain algorithms due to there only being two 1 in its binary form (10000000000000001) [^7]. Here is how to calculate the RSA keys:
+
+`rsa -p 999998727899999 -q 990377764891511 -e 65537`
+
+{% include_relative python-online.md %}
+
+![python-online-example](./images/python-online-example-rsa-real-1.png)
+
+Or using the code from GitHub like this:
+
+```
+$ python rsa_demo.py rsa -p 999998727899999 -q 990377764891511 -e 65537
+p = 999998727899999
+q = 990377764891511
+n = p * q = 990376505031955291131092008489
+m = (p-1) * (q-1) = 990376505031953300754599216980
+e must be chosen as co-prime with m, you chose e = 65537
+math.gcd(m, e)= 1
+Check passed: your encryption key e: 65537 has no common factors with m: 990376505031953300754599216980 so we can proceed...
+decryption key: find d that satisfies: e . d ≅ 1 (mod m)
+decryption key: find d that satisfies: 65537 . d ≅ 1 (mod 990376505031953300754599216980 ), d = 282558858218830016898995928393
+```
+
+So, we have:
+public key e = 65537 (share this with everyone)  
+modulo n = 990376505031955291131092008489 (share this with everyone)  
+private key d = 282558858218830016898995928393 (keep this secret, Alice!)
+
+Next, we just need a message to encrypt. Let's try a small example first so we can test that it works:
+Let's get Bob to say **_"Hello, Alice! How are you today?"_**.
+
+You can see this plaintext in the following file: [plaintext_text.txt](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_text.txt). Here is the command to encode, encrypt, and decrypt that file. The log shows the progress at each step of the way and at the end compares the original input to the decrypted output to make sure they match:
+
+`encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_text.txt `
+
+{% include_relative python-online.md %}
+
+![python-online-example](./images/python-online-example-rsa-real-2.png)
+
+Or using the code from GitHub like this:
+
+```
+$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_text.txt
+====== Start
+Plaintext file contents - [ and ] are not part of the file:
+[Hello, Alice! How are you today?]
+======
+Encoded contents - [ and ] are not part of the file:
+[172201208208211144132165208205
+199201133132172211219132197214
+201132221211217132216211200197
+221163000000000000000000000000]
+======
+RSA Encrypted contents using public key 65537 - [ and ] are not part of the file:
+[153993868398685821414020220200
+931945730961823099956807270267
+487852773892009187752813440763
+479664297831093847580730005558
+]
+======
+RSA Decrypted contents using private key 282558858218830016898995928393 -[ and ] are not part of the file:
+[Hello, Alice! How are you today?]
+======
+Checking if original plaintext matches encrypted + decrypted result:
+original file: [Hello, Alice! How are you today?]
+encr and decr: [Hello, Alice! How are you today?]
+Both Match!
+====== End
+```
+
+Look! The original plaintext matches the processed text perfectly. That ws only a small example, now lets to a large file with complex characters in it to make sure out code is working as required.
+
+### A large complex file
+
+THe final test for the RSA block scheme that has been implemented is to accuratley encrypt and decrypt a complex file. Have look at the example file [here](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt) in which you can see a very complex structure that would be ruined if anything went missing. It is also quite a lot longer than the previous example. Let's cross our fingers for this one. Again, here is the command for encrypting and decrypting the large text file:
+
+`encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_long_length.txt`
+
+{% include_relative python-online.md %}
+
+![python-online-example](./images/python-online-example-rsa-real-3.png)
+
+To see how Darth Vader faired, please run teh example yourself as the output is too long to screenshot.
+
+Or using the code from GitHub like this:
+
+```
+$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_long_length.txt
+====== Start
+Plaintext file contents - [ and ] are not part of the file:
+[Hello, Alice! How are you today?
+I'm well, thanks, before you ask me.
+
+I'm sure this implementaiton is not secure, it is only for learning and demonstration purposes. You know what they say: "Never roll your own crypto!"
+
+How about this RSA algorithm for encrypting and decrypting arbitrary text files of any length?
+Amaizing, huh?
+
+Here are some crazy characters:
+
+~!@#$%^&*()_+`1234567890-={}|[]\:";'<>?,./
+
+And some ascii art:
+
+Art by Shanaka Dias
+                       .-.
+                      |_:_|
+                     /(_Y_)\
+.                   ( \/M\/ )
+ '.               _.'-/'-'\-'._
+   ':           _/.--'[[[[]'--.\_
+     ':        /_'  : |::"| :  '.\
+       ':     //   ./ |oUU| \.'  :\
+
+...
+(I wont spoil the ending for you, you will need to run this yourself!)
+====== End
+```
+
+That concludes the practical demonstration of RSA being used in a near-real-world example.
+
+**_Remember: Never roll your own crypto_**  
+(unless it is for learning and demonstration purposes)
+
 ## Security notes
 
 1. In practice these two elected prime numbers should be large and randomly selected. There other considerations to make the possibility of attacks less likely. This is one reason why you should never implement your own encryption as the mathematics behind it is very complex.
-2. ToDo: add additional security concerns from [^7] and [^8]
+2. Additional security concerns are left to the reader in [^7] and [^8]
 
 ## References
 
