@@ -52,12 +52,6 @@ An example is 21 and 22. you can see from the diagram that:
 
 {% include_relative python-online.md %}
 
-You can run these examples online from here: [online-python-link]  
-[![online-python][online-python-image]][online-python-link]
-
-[online-python-link]: https://www.online-python.com/ZG1o2TcHBD
-[online-python-image]: ./images/online-python.png
-
 **Or** if you have the example python code checked out from here: [learn-encryption-with-python](https://github.com/nhoyle-unsw/learn-encryption-with-python/) you can run this from the command line like this:
 
 ```console
@@ -111,3 +105,5 @@ $ python rsa_demo.py factors -n 24
 ## References
 
 [^1]: <https://www.mathsisfun.com/definitions/coprime.html>
+
+{% include_relative python-online-links.md %}
