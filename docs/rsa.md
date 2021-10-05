@@ -46,7 +46,13 @@ Alice can create an RSA public key and private key using the following method (w
 
 All of the above steps can be completed in one call to the python program to generate the RSA public and private keys like this:
 
-Or on the command line like this:
+`rsa -p 557 -q 839 -e 7825`
+
+{% include_relative python-online.md %}
+
+![python-online-example](./images/python-online-example-rsa.png)
+
+Or using the code from GitHub like this:
 
 ```
 $ python rsa_demo.py rsa -p 557 -q 839 -e 7825
