@@ -101,4 +101,4 @@ We will use this property of two prime numbers and their product later when calc
 
 [^khan]: <https://youtu.be/qa_hksAzpSg> Khan Academy Labs - Euler's Totient
 [^penn]: <https://www.youtube.com/watch?v=2JY3P3aHUJk> Michael Penn - Euler's Totient
-[^wolfram]: Wolfram Alpha LLC. 2009. Wolfram|Alpha. <https://www.wolframalpha.com/input/?i=plot+phi+of+x> (access September 12, 2021).
+[^wolfram]: Wolfram Alpha LLC. 2009. Wolfram\|Alpha. <https://www.wolframalpha.com/input/?i=plot+phi+of+x> (access September 12, 2021).
