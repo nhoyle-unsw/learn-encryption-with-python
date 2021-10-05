@@ -34,7 +34,7 @@ For my block algorithm I chose:
 - Alphabet: I chose to include all the control characters (from ascii 0) and the printable characters up to and including the character at ascii 155. Why? I wanted to make it clear and easy to understand.
 - Leading zeros on a number will be lost because they are meaningless to mathematics. So my character range is from ascii 0 - 155 (Null... control characters, symbols, 0-9, symbols, A-Z, symbols, a-z, symbols, up to '>' which is at ascii 155). I add 100 on to the ascii code for each so that I have no leading zeros. So , my range is now 100 - 255. This could potentially be stored as 8 bits for each character rather than just as plain characters, but again for clarity I chose not to do that.
 
-The converter functions are used to both translate the text to and from numbers and also to break it up into manageable chunks of 10 characters each (or 30 numbers):
+The converter functions are used to both translate the text to and from numbers and also to break it up into manageable chunks of 10 characters each (or 30 numbers). Padding is also added so that each block is exactly 30 numbers. These are stripped out when the decryption and de-translation happens:
 **Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/converter.py)
 
 ## References
