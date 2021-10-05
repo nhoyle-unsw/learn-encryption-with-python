@@ -109,8 +109,3 @@ $ python rsa_demo.py factors -n 24
 ## References
 
 [^1]: <https://www.mathsisfun.com/definitions/coprime.html>
-[^how-to-link-with-an-image]: <https://meta.stackexchange.com/questions/2133/whats-the-recommended-syntax-for-an-image-with-a-link>
-
-## Useful tips
-
-Markdown images: [^how-to-link-with-an-image]
