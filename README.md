@@ -2,6 +2,6 @@
 
 Describe and understand the mathematics of encryption through the use of words, diagrams and python code
 
-See Wiki at: https://github.com/nhoyle-unsw/learn-encryption-with-python/wiki
+See documentation at: https://nhoyle-unsw.github.io/learn-encryption-with-python/
 
-See rsa_demo at:
+See rsa_demo at: https://www.online-python.com/ZG1o2TcHBD
