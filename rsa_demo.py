@@ -117,6 +117,18 @@ def main():
     elif "convert_to_text" == args.command:
         converter.convert_to_text(args.t)
         return 0
+    elif "encrypt_large_string" == args.command:
+        rsa.encrypt_large_string(args.t)
+        return 0
+    elif "decrypt_large_string" == args.command:
+        rsa.decrypt_large_string(args.t)
+        return 0
+    elif "encrypt_file_contents" == args.command:
+        rsa.encrypt_file_contents(args.t)
+        return 0
+    elif "decrypt_file_contents" == args.command:
+        rsa.decrypt_file_contents(args.t)
+        return 0
 
 
 if __name__ == "__main__":

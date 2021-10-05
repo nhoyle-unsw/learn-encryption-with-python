@@ -53,9 +53,16 @@ Alice can create an RSA public key and private key using the following method (w
 
 Todo
 
+## Demonstration of basic RSA
+
+## Demonstration of practical use of RSA
+
+**Note:** although this is a realistic demonstration of the application of RSA, this should not be used in teh real words as it is not secure. 15 digit and other large primes were sourced from: [^9] and [^10]
+
 ## Security notes
 
 1. In practice these two elected prime numbers should be large and randomly selected. There other considerations to make the possibility of attacks less likely. This is one reason why you should never implement your own encryption as the mathematics behind it is very complex.
+2. ToDo: add additional security concerns from [^7] and [^8]
 
 ## References
 
@@ -67,4 +74,6 @@ Todo
 [^6]: <https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment>
 [^7]: <https://cacr.uwaterloo.ca/hac/>
 [^8]: <https://cacr.uwaterloo.ca/hac/about/chap8.pdf>
-[^9]: <https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python>
+[^9]: <https://primes.utm.edu/curios/index.php?start=12&stop=15> Source of 15 digit primes used for my demonstration
+[^10]: <https://stackoverflow.com/questions/29818519/what-is-the-opposite-of-pythons-ord-function>
+[^11]: <https://primes.utm.edu/lists/small/millions/>

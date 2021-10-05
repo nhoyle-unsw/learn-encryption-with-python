@@ -3,6 +3,7 @@ import math
 from printd import printd
 from factors import gcd
 from modulus import *
+import converter
 
 
 def guess_encryption_key(m):
@@ -61,11 +62,11 @@ def rsa(p, q, e, plaintext):
     return y
 
 
-def encrypt(plaintext, e, n):
-    """[encrypt a message]
+def encrypt(plaintext_number, e, n):
+    """[encrypt a plaintext_number]
 
     Args:
-        plaintext ([int]): [The plaintext to be encrypted]
+        plaintext_number ([int]): [The plaintext number to be encrypted]
         e ([int]): [The encryption key]
         n ([int]): [modulus]
 
@@ -73,29 +74,64 @@ def encrypt(plaintext, e, n):
     Returns:
         [int]: [y = ciphertext]
     """
-    x = plaintext
-    print("plaintext x:", x)
-    print("ciphertext: y = x ^ e mod n:", x, "^", e, "mod", n)
+    x = plaintext_number
+    print("plaintext_number x:", x)
+    print("ciphertext_number: y = x ^ e mod n:", x, "^", e, "mod", n)
     # https://www.geeksforgeeks.org/pow-in-python/ and https://www.geeksforgeeks.org/modular-exponentiation-python/
     y = pow(x, e, n)
-    print("ciphertext y =", y)
+    print("ciphertext_number y =", y)
     return y
 
 
-def decrypt(ciphertext, d, n):
+def decrypt(ciphertext_number, d, n):
     """[decrypt a message]
 
     Args:
-        ciphertext ([int]): [The ciphertext to be decrypted]
+        ciphertext_number ([int]): [The ciphertext number to be decrypted]
         d ([int]): [The decryption key]
         n ([int]): [modulus]
 
     Returns:
         [int]: [x = plaintext]
     """
-    y = ciphertext
-    print("ciphertext y to decrypt =", y)
+    y = ciphertext_number
+    print("ciphertext_number y to decrypt =", y)
     print("decrypt: x = y ^ d mod n:", y, "^", d, "mod", n)
     x = pow(y, d, n)
     print("plaintext x =", x)
     return x
+
+
+def encrypt_large_string(large_string, e, n):
+    encrypted = ""
+    for number in converter.convert_to_numbers(large_string):
+        encrypted += encrypt(number, e, n)
+    return encrypted
+
+
+def encrypt_file_contents(input_file_name_plaintext_chars, e, n):
+    large_string = read_file(input_file_name_plaintext_chars)
+    large_string_encrypted = encrypt_large_string(large_string, e, n)
+    return large_string_encrypted
+
+
+def read_file(file_name):
+    text_file = open(file_name)
+    data = text_file.read()
+    text_file.close()
+    return data
+
+
+def decrypt_large_string(large_string, e, n):
+    decrypted = ""
+    # remove new lines
+    # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_join2
+    for number_as_string in large_string.split("\n"):
+        decrypted += decrypt(int(number_as_string), e, n)
+    return decrypted
+
+
+def decrypt_file_contents(input_file_name_ciphertext_numbers, d, n):
+    large_string = read_file(input_file_name_ciphertext_numbers)
+    large_string_decrypted = decrypt_large_string(large_string, d, n)
+    return large_string_decrypted
