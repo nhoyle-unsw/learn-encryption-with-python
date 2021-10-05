@@ -20,7 +20,7 @@ There are many decisions to be made when you want to convert text to numbers:
 
 Similar to the text <--> numbers conversion issues above we need to ask ourselves some questions when we want to break our plaintext up into blocks:
 
-- What is the maximum number that we can encrypt without going above the size of the mudulus n (the product of the two primes)
+- What is the maximum number that we can encrypt without going above the size of the modulus n (the product of the two primes)
 - Another way of looking at it is: if i choose a block size, what is the minimum size of prime numbers i need to use so I can encode for that. For example if you use 3 numbers per character and want to encode 10 characters per block, then your n will need to be at least 30 digits long. This means you prime numbers need to be at least 15 digits long each. 1 x 10 ^ 15 . 1 x 10 ^ 15 = 1 x 10 ^ 30
 - What if your text starts with the biggest numbered character?
 - How do you make as many characters fit into as few numbers as possible?

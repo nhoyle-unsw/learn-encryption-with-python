@@ -1,0 +1,38 @@
+Hello, Alice! How are you today?
+I'm well, thanks, before you ask me.
+
+I'm sure this implementaiton is not secure, it is only for learning and demonstration purposes. You know what they say: "Never roll your own crypto!"
+
+How about this RSA algorithm for encrypting and decrypting arbitrary text files of any length?
+Amaizing, huh?
+
+Here are some crazy characters:
+
+~!@#$%^&*()_+`1234567890-={}|[]\:";'<>?,./
+
+And some ascii art:
+
+Art by Shanaka Dias
+                       .-.
+                      |_:_|
+                     /(_Y_)\
+.                   ( \/M\/ )
+ '.               _.'-/'-'\-'._
+   ':           _/.--'[[[[]'--.\_
+     ':        /_'  : |::"| :  '.\
+       ':     //   ./ |oUU| \.'  :\
+         ':  _:'..' \_|___|_/ :   :|
+           ':.  .'  |_[___]_|  :.':\
+            [::\ |  :  | |  :   ; : \
+             '-'   \/'.| |.' \  .;.' |
+             |\_    \  '-'   :       |
+             |  \    \ .:    :   |   |
+             |   \    | '.   :    \  |
+             /       \   :. .;       |
+            /     |   |  :__/     :  \\
+           |  |   |    \:   | \   |   ||
+          /    \  : :  |:   /  |__|   /|
+      snd |     : : :_/_|  /'._\  '--|_\
+          /___.-/_|-'   \  \
+                         '-'
+https://www.asciiart.eu/movies/star-wars

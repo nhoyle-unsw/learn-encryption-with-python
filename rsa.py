@@ -75,11 +75,11 @@ def encrypt(plaintext_number, e, n):
         [int]: [y = ciphertext]
     """
     x = plaintext_number
-    print("plaintext_number x:", x)
-    print("ciphertext_number: y = x ^ e mod n:", x, "^", e, "mod", n)
+    printd("plaintext_number x:", x)
+    printd("ciphertext_number: y = x ^ e mod n:", x, "^", e, "mod", n)
     # https://www.geeksforgeeks.org/pow-in-python/ and https://www.geeksforgeeks.org/modular-exponentiation-python/
     y = pow(x, e, n)
-    print("ciphertext_number y =", y)
+    printd("ciphertext_number y =", y)
     return y
 
 
@@ -95,17 +95,19 @@ def decrypt(ciphertext_number, d, n):
         [int]: [x = plaintext]
     """
     y = ciphertext_number
-    print("ciphertext_number y to decrypt =", y)
-    print("decrypt: x = y ^ d mod n:", y, "^", d, "mod", n)
+    printd("ciphertext_number y to decrypt =", y)
+    printd("decrypt: x = y ^ d mod n:", y, "^", d, "mod", n)
     x = pow(y, d, n)
-    print("plaintext x =", x)
+    printd("plaintext x =", x)
     return x
 
 
 def encrypt_large_string(large_string, e, n):
     encrypted = ""
-    for number in converter.convert_to_numbers(large_string):
-        encrypted += encrypt(number, e, n)
+    numbers_as_int_list, numbers_as_string = converter.convert_to_numbers(
+        large_string)
+    for number_as_int in numbers_as_int_list:
+        encrypted += str(encrypt(int(number_as_int), e, n)) + "\n"
     return encrypted
 
 
@@ -118,6 +120,7 @@ def encrypt_file_contents(input_file_name_plaintext_chars, e, n):
 def read_file(file_name):
     text_file = open(file_name)
     data = text_file.read()
+    printd("file contents:[" + data + "]")
     text_file.close()
     return data
 
@@ -127,11 +130,15 @@ def decrypt_large_string(large_string, e, n):
     # remove new lines
     # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_join2
     for number_as_string in large_string.split("\n"):
-        decrypted += decrypt(int(number_as_string), e, n)
-    return decrypted
+        # avoid blank lines
+        if len(number_as_string) > 0:
+            decrypted += str(decrypt(int(number_as_string), e, n))
+    decrypted_converted = converter.convert_to_text(decrypted)
+    return decrypted_converted
 
 
 def decrypt_file_contents(input_file_name_ciphertext_numbers, d, n):
     large_string = read_file(input_file_name_ciphertext_numbers)
-    large_string_decrypted = decrypt_large_string(large_string, d, n)
+    large_string_decrypted = decrypt_large_string(
+        large_string, d, n)
     return large_string_decrypted

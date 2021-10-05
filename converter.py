@@ -5,21 +5,27 @@ from printd import printd
 
 def convert_to_numbers(text):
     input = text
-    output = ""
+    output_as_str = ""
+    output_as_int_list = []
+    current_number_as_str = ""
     i = 0
     for character in input:
         i += 1
-        # I add 100 to the ascii code so that no characters have leading zeros
-        number = ord(character) + 100
-        output += str(number)
+        # We add 100 to the ascii code so that no characters have leading zeros
+        char_as_int = ord(character) + 100
+        current_number_as_str += str(char_as_int)
         if(i % 10 == 0):
-            output += "\n"
+            output_as_str += current_number_as_str + "\n"
+            output_as_int_list.append(int(current_number_as_str))
+            current_number_as_str = ""
     if(i % 10 != 0):
-        # add padding up to t10 characters
+        # add padding up to 10 characters
         for j in range(10 - (i % 10)):
-            output += "000"
-    print(output)
-    return output
+            current_number_as_str += "000"
+        output_as_str += current_number_as_str
+        output_as_int_list.append(int(current_number_as_str))
+    printd(output_as_str, output_as_int_list)
+    return output_as_int_list, output_as_str
 
 
 def convert_to_text(number_as_text):
@@ -31,8 +37,5 @@ def convert_to_text(number_as_text):
         # only include non zero characters (this removes the padding)
         if(charnum != "000"):
             text += chr(int(charnum) - 100)
-    print(text)
+    printd(text)
     return text
-
-
-def convert_file(filename):

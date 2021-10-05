@@ -3,6 +3,7 @@ from modulus import mod, mod_mul_inv_naive
 from factors import gcd
 from euler import phi
 from primes import prime
+import rsa
 
 
 class UnitTests(unittest.TestCase):
@@ -98,6 +99,25 @@ class UnitTests(unittest.TestCase):
         self.assertTrue(mod_mul_inv_naive(7, 42) == None)
         # https://www.wolframalpha.com/input/?i=3x+%3D+1+%28mod+3%29
         self.assertTrue(mod_mul_inv_naive(3, 3) == None)
+
+    def test_encrypt_decrypt(self):
+        """[encrypt all of teh alphabet and then decrypt it to check it comes back the same.]
+        """
+        test_all_chars_to_155 = ""
+        for i in range(0, 155+1):
+            test_all_chars_to_155 += chr(i)
+        private_key = 282558858218830016898995928393
+        modulus_n = 990376505031955291131092008489
+        public_key = 65537
+        encrypt_and_decrypt_result = rsa.decrypt_large_string(
+            rsa.encrypt_large_string(
+                test_all_chars_to_155,
+                private_key,
+                modulus_n),
+            public_key,
+            modulus_n
+        )
+        self.assertEquals(encrypt_and_decrypt_result, test_all_chars_to_155)
 
 
 if __name__ == '__main__':

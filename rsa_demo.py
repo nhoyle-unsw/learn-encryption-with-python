@@ -57,7 +57,9 @@ parser.add_argument("-x", type=int,
 parser.add_argument("-y", type=int,
                     help="value for y - ciphertext as an integer")
 parser.add_argument("-t",
-                    help="value for t - text to be converted to an integer")
+                    help="value for t - text to be converted to numbers")
+parser.add_argument("-f",
+                    help="value for f - file to be encrypted or decrypted")
 parser.add_argument("-D", "--debug", action="store_true",
                     help="Output debug statements (you need to press Enter to see each line of the output)")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
@@ -112,22 +114,68 @@ def main():
         rsa.decrypt(args.y, args.d, args.n)
         return 0
     elif "convert_to_number" == args.command:
-        converter.convert_to_number(args.t)
+        converter.convert_to_numbers(args.t)
         return 0
     elif "convert_to_text" == args.command:
         converter.convert_to_text(args.t)
         return 0
     elif "encrypt_large_string" == args.command:
-        rsa.encrypt_large_string(args.t)
+        print(rsa.encrypt_large_string(args.t, args.e, args.n))
         return 0
     elif "decrypt_large_string" == args.command:
-        rsa.decrypt_large_string(args.t)
+        print(rsa.decrypt_large_string(args.t, args.d, args.n))
         return 0
     elif "encrypt_file_contents" == args.command:
-        rsa.encrypt_file_contents(args.t)
+        print(rsa.encrypt_file_contents(args.f, args.e, args.n))
         return 0
     elif "decrypt_file_contents" == args.command:
-        rsa.decrypt_file_contents(args.t)
+        print(rsa.decrypt_file_contents(args.f, args.d, args.n))
+        return 0
+    elif "encrypt_and_decrypt_file_contents" == args.command:
+        print("====== Start")
+        if not args.n > 2.56 * 10**(30-1):
+            # Our largest character is 255, so if every one of the ten characters is
+            # made up of that charctr then it can be no bigger than:
+            # 255,255,255,255,255,255,255,255,255,255 so any 'n' larger than
+            # 256,000,000,000,000,000,000,000,000,000 should work
+            print("Error: Please supply a modulus n larger than 30 digits. Exiting.")
+            return 1
+        print("Plaintext file contents - [ and ] are not part of the file:")
+        plaintext_file_contents = rsa.read_file(args.f)
+        print("[" + plaintext_file_contents + "]")
+        print("======")
+
+        print("Encoded contents - [ and ] are not part of the file:")
+        numbers_as_int_list, numbers_as_string = converter.convert_to_numbers(
+            plaintext_file_contents)
+        print("[" + numbers_as_string + "]")
+        print("======")
+
+        print("RSA Encrypted contents using public key",
+              args.e, "- [ and ] are not part of the file:")
+        encryption_result = rsa.encrypt_file_contents(args.f, args.e, args.n)
+        print("[" + encryption_result + "]")
+        print("======")
+
+        print("RSA Decrypted contents using private key",
+              args.d, "-[ and ] are not part of the file:")
+        decryption_result = rsa.decrypt_large_string(
+            encryption_result, args.d, args.n)
+        print("[" + decryption_result + "]")
+        print("======")
+
+        print("Checking if original plaintext matches encrypted + decrypted result:")
+        if plaintext_file_contents == decryption_result:
+            print("original file: [" + plaintext_file_contents + "]")
+            print("encr and decr: [" + decryption_result + "]")
+            print("Both Match!")
+        else:
+            print(
+                "Error: They don't match! You may have found a bug. Please report it here: ")
+            print(
+                "https://github.com/nhoyle-unsw/learn-encryption-with-python/issues/new")
+
+        print("====== End")
         return 0
 
 
