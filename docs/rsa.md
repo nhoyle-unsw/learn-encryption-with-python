@@ -8,11 +8,11 @@ RSA is an acronym made up from the surnames of its inventors [^1]:
 - Adi **S**hamir:
 - Leonard **A**dleman:
 
-**Ronald Rivest** also invented RC2, 4, 5 and 6 symmetric key encryption algorithms as well as the well the MD2, 4, 5 and 6 family of hash functions. https://en.wikipedia.org/wiki/Ron_Rivest [^2]
+**Ronald Rivest** also invented RC2, 4, 5 and 6 symmetric key encryption algorithms as well as the well the MD2, 4, 5 and 6 family of hash functions. [^2]
 
-**Adi Shamir** was a co-discoverer of Differential Cryptanalysis: https://en.wikipedia.org/wiki/Differential_cryptanalysis, which was later reveled to have been already known by IBM and the NSA. https://en.wikipedia.org/wiki/Adi_Shamir [^3]
+**Adi Shamir** was a co-discoverer of Differential Cryptanalysis: https://en.wikipedia.org/wiki/Differential_cryptanalysis, which was later reveled to have been already known by IBM and the NSA. [^3]
 
-**Leonard Adleman** is widely referred to as the Father of DNA Computing, where DNA is used to compute an algorithm. He is also the co-discoverer fo the Adleman–Pomerance–Rumely primality test. https://en.wikipedia.org/wiki/Leonard_Adleman [^4]
+**Leonard Adleman** is widely referred to as the Father of DNA Computing, where DNA is used to compute an algorithm. He is also the co-discoverer fo the Adleman–Pomerance–Rumely primality test. [^4]
 
 ## History
 
@@ -69,20 +69,71 @@ decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
 
 ## RSA Encryption - Bob using public key to encrypt
 
-1. Bob has a message "RSA" to encrypt and send to Alice
-1. Convert the message to a number: convert
-
-{% include_relative python-online.md %}
+1. Bob has a message "RSA" to encrypt and send to Alice.
+1. Convert the message to a number using the position of the letter in the alphabet: R=18, S=19 A=01, so we have 181901.
+1. To encrypt this message, all we need to do is calculate the following:  
+   x^e mod n = 181901 ^ 7825 mod 467323
+   which we can do online like this:
+   `power_mod -a 181901 -b 7825 -n 467323`
+   {% include_relative python-online.md %}
+   Or using the code like this:
+   ```
+   $ python rsa_demo.py power_mod -a 181901 -b 7825 -n 467323
+   183780
+   ```
+1. Bob can now send this secret message to Alice
 
 ## RSA Decryption - Alice using private key to decrypt
 
-{% include_relative python-online.md %}
+1. For Alice it is pretty simple to decrypt. It is the opposite steps to Bob.
+1. To decrypt, Alice calculates the following:
+   y^d mod n = 183780 ^ 214833 mod 467323
+   which we can do online like this:
+   ```
+   power_mod -a 183780 -b 214833 -n 467323
+   181901
+   ```
+   {% include_relative python-online.md %}  
+   Or using the code like this:
+   ```
+   $ python rsa_demo.py power_mod -a 183780 -b 214833 -n 467323
+   181901
+   ```
+1. Alice now needs to turn the numbers 181901 back into letters. 18=R, 19=S, 01=A
+1. The message is RSA.
 
-## Demonstration of basic RSA
+Too easy, now for something a bit more realistic.
 
 ## Demonstration of practical use of RSA
 
-**Note:** although this is a realistic demonstration of the application of RSA, this should not be used in teh real words as it is not secure. 15 digit and other large primes were sourced from: [^9] and [^10]
+Now that the basic example is out of the way, let's look at a real example of a much longer message being encrypted, sent to Alice and then decrypted to re-produce the file as it was.
+
+**Note:** although this is a realistic demonstration of the application of RSA, this should not be used in the real world as it is not secure. The 15 digit primes for this example were sourced from: [^9] and [^10]
+
+The message that Bob sent Alice above was only possible because the message was so small. With RSA you can only encrypt a number that is smaller than the modulo n. In the above example this was 467323. So we can only encrypt three letters at the most. This is not very practical. It is good for learning how it works though as the numbers are quite small. So, now lets see how we can encrypt and decrypt a text file of any size at all.
+
+### Problems
+
+The problems we have are:
+
+1. We need to allow for more characters of the alphabet (upper and lower) as well as numbers and symbols
+1. We need a way to break a message apart into chunks (or blocks) and encrypt each block.
+1. We probably need a much bigger modulo n, so we will need to start with much bigger p and q prime numbers.
+1. We need to be able to reverse all of the above so that the original file is returned to Alice in plaintext form as it was first created by Bob.
+
+### Solutions
+
+1. For how to add more characters, numbers and symbols see <a href="Text-conversion-and-blocks#conversion-of-text-to-numbers">Conversion of text to numbers</a> - this scheme has 3 digits for each character.
+1. For how to chunk up the text into manageable blocks see: <a href="Text-conversion-and-blocks#breaking-text-up-into-blocks">Breaking text up into blocks</a>
+1. For bigger primes see [^9]. I chose the following two 15 digit primes for this example:  
+   p = 999998727899999  
+   q = 990377764891511
+1. This will give us a modulo n that is 30 digits long. This fits nicely with the character encoding scheme chosen above because we have three digits per character, so we will be able to encrypt 10 characters at a time. This gives us our block size.
+1. The last problem is how it can be all made to encode, encrypt, decrypt and decode back into the original plaintext file. Well, this is where python will help us. We can re-use the demonstration code written for learning to do just that in a repeatable fashion.
+
+## Practical example
+
+We can now use all of the parts we have been over to do a complete end to end encryption and decryption. We wil start with generating the public and private keys.
 
 ## Security notes
 

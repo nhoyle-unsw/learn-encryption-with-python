@@ -80,6 +80,9 @@ def main():
     if "mod" == args.command:
         print(modulus.mod(args.a, args.b))
         return 0
+    if "power_mod" == args.command:
+        print(pow(args.a, args.b, args.n))
+        return 0
     elif "modinv" == args.command:
         print(modulus.mod_mul_inv_naive(args.a, args.m))
         return 0
@@ -108,16 +111,17 @@ def main():
         rsa.rsa(args.p, args.q, args.e)
         return 0
     elif "rsa-encrypt" == args.command:
-        rsa.encrypt(args.x, args.e, args.n)
+        print(rsa.encrypt(args.x, args.e, args.n))
         return 0
     elif "rsa-decrypt" == args.command:
-        rsa.decrypt(args.y, args.d, args.n)
+        print(rsa.decrypt(args.y, args.d, args.n))
         return 0
     elif "convert_to_number" == args.command:
-        converter.convert_to_numbers(args.t)
+        _, text_as_numbers = converter.convert_to_numbers(args.t)
+        print(text_as_numbers)
         return 0
     elif "convert_to_text" == args.command:
-        converter.convert_to_text(args.t)
+        print(converter.convert_to_text(args.t))
         return 0
     elif "encrypt_large_string" == args.command:
         print(rsa.encrypt_large_string(args.t, args.e, args.n))
