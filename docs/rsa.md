@@ -31,7 +31,7 @@ There have been reports of progress towards cracking RSA encryption using Shor's
 
 ## RSA Key generation
 
-Alice can create an RSA public key and private key using the following method (with example on the right)
+Alice can create an RSA public key and private key using the following method (with example on the right). **Note:** I have used an example that matches one from the Fundamentals of Security Engineering [^sec-eng] course to allow other students to follow the example, but you do not need to have seen this example to follow below. We will do a more realistic example once you understand the basic steps.
 
 | Step | Procedure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                                                                                       | Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                          |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -69,7 +69,7 @@ decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
 
 ## RSA Encryption - Bob using public key to encrypt
 
-1. Bob has a message "Hello Alice" to encrypt and send to Alice
+1. Bob has a message "RSA" to encrypt and send to Alice
 1. Convert the message to a number: convert
 
 {% include_relative python-online.md %}
@@ -99,8 +99,9 @@ decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
 [^6]: <https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment>
 [^7]: <https://cacr.uwaterloo.ca/hac/>
 [^8]: <https://cacr.uwaterloo.ca/hac/about/chap8.pdf>
-[^9]: <https://primes.utm.edu/curios/index.php?start=12&stop=15> Source of 15 digit primes used for my demonstration
+[^9]: Source of 15 digit primes used for my demonstration <https://primes.utm.edu/curios/index.php?start=12&stop=15>
 [^10]: <https://stackoverflow.com/questions/29818519/what-is-the-opposite-of-pythons-ord-function>
 [^11]: <https://primes.utm.edu/lists/small/millions/>
+[^sec-eng]: <https://www.openlearning.com/unswcourses/courses/eng-principles-21/activities/learnhowrsaworks/?cl=1>
 
 {% include_relative python-online-links.md %}
