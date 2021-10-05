@@ -19,7 +19,7 @@ def guess_encryption_key(m):
     return 2 ** 16 + 1
 
 
-def rsa(p, q, e, plaintext):
+def rsa(p, q, e):
     """[from two prime numbers 'p' and 'q' and a private key 'e' calculate the public key]
 
     Args:
@@ -53,6 +53,7 @@ def rsa(p, q, e, plaintext):
     print("decryption key: find d that satisfies: e . d ≅ 1 (mod m)")
     print("decryption key: find d that satisfies:",
           e, ". d ≅ 1 (mod", m, "), d =", d)
+    """
     x = plaintext
     encrypted = encrypt(x, e, n)
     y = encrypted
@@ -60,6 +61,8 @@ def rsa(p, q, e, plaintext):
     if(decrypted != plaintext):
         print("Error: unable to encrypt/decrypt without loss. Your plaintext needs to be less than n:", n)
     return y
+    """
+    return None
 
 
 def encrypt(plaintext_number, e, n):

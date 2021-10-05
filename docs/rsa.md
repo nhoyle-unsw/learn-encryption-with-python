@@ -44,14 +44,33 @@ Alice can create an RSA public key and private key using the following method (w
 | 7    | The public key is both **_n_** and **_e_**                                                                                                                                                                              | n = 467323 e = 7825                                                             | Alice published the encryption key e and the number n as the public key. Anyone can encrypt messages for her to decrypt. |
 | 8    | Throw away the other numbers, you don't need them.                                                                                                                                                                      |                                                                                 | Alice no longer needs p, q or m. So, she discards them safely.                                                           |
 
+All of the above steps can be completed in one call to the python program to generate the RSA public and private keys like this:
+
+Or on the command line like this:
+
+```
+$ python rsa_demo.py rsa -p 557 -q 839 -e 7825
+p = 557
+q = 839
+n = p * q = 467323
+m = (p-1) * (q-1) = 465928
+e must be chosen as co-prime with m, you chose e = 7825
+math.gcd(m, e)= 1
+Check passed: your encryption key e: 7825 has no common factors with m: 465928 so we can proceed...
+decryption key: find d that satisfies: e . d ≅ 1 (mod m)
+decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
+```
+
 ## RSA Encryption - Bob using public key to encrypt
 
 1. Bob has a message "Hello Alice" to encrypt and send to Alice
 1. Convert the message to a number: convert
 
+{% include_relative python-online.md %}
+
 ## RSA Decryption - Alice using private key to decrypt
 
-Todo
+{% include_relative python-online.md %}
 
 ## Demonstration of basic RSA
 
@@ -77,3 +96,5 @@ Todo
 [^9]: <https://primes.utm.edu/curios/index.php?start=12&stop=15> Source of 15 digit primes used for my demonstration
 [^10]: <https://stackoverflow.com/questions/29818519/what-is-the-opposite-of-pythons-ord-function>
 [^11]: <https://primes.utm.edu/lists/small/millions/>
+
+{% include_relative python-online-links.md %}

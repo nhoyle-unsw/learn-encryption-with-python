@@ -105,7 +105,7 @@ def main():
         print(euler.phi(args.n))
         return 0
     elif "rsa" == args.command:
-        rsa.rsa(args.p, args.q, args.e, args.x)
+        rsa.rsa(args.p, args.q, args.e)
         return 0
     elif "rsa-encrypt" == args.command:
         rsa.encrypt(args.x, args.e, args.n)
