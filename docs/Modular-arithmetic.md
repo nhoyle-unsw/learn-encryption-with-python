@@ -11,6 +11,11 @@ Although it sounds very technical modulus is a pretty simple concept. We all kno
 
 ### Run the Python code example
 
+`mod -a 10 -b 3`  
+{% include_relative python-online.md %}
+
+Or on your local machine using python:
+
 ```console
 $ python rsa_demo.py mod  -a 10 -b 3
 1
@@ -155,6 +160,7 @@ It is not surprising that we see this repeating every 7th iteration as we are us
 
 ### Run the Python code example (do it the long way)
 
+`mod -a 15 -b 7`  
 {% include_relative python-online.md %}
 
 Or we can use the python program to calculate each of the steps above:
@@ -189,9 +195,10 @@ The example definition above was in order to show a simple algorithm for calcula
 Here is a naive implementation of finding the mod inverse of a number, it uses the method above where it keeps searching until it fonds a 1 - OR it gives up if it doesn't find anything:  
 **Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/modulus.py#L29)
 
+`modinv -a 3 -m 7`
 {% include_relative python-online.md %}
 
-Here is an example of how to run the code yourself:
+Or, here is an example of how to run the code yourself:
 
 ```
 $ python rsa_demo.py modinv -a 3 -m 7
