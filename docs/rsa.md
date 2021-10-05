@@ -256,6 +256,10 @@ Art by Shanaka Dias
 ====== End
 ```
 
+OK, so [here is the output I got](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt_output.txt), but you have to try it yourself ;)
+
+## Fin
+
 That concludes the practical demonstration of RSA being used in a near-real-world example.
 
 **_Remember: Never roll your own crypto_**  
@@ -263,7 +267,7 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 
 ## Security notes
 
-1. In practice these two elected prime numbers should be large and randomly selected. There other considerations to make the possibility of attacks less likely. This is one reason why you should never implement your own encryption as the mathematics behind it is very complex.
+1. In practice these two selected prime numbers should be large and randomly selected. There other considerations to make the possibility of attacks less likely. This is one reason why you should never implement your own encryption as the mathematics behind it is very complex and I do not fully understand it.
 2. Additional security concerns are left to the reader in [^7] and [^8]
 
 ## References
