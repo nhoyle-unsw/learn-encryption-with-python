@@ -33,10 +33,11 @@ By definition, a prime number must have two distinct factors and 1 only has one 
 This infographic shows all of these concepts for the integers from 1 to 31.
 
 ![Integers, Factoring and Prime Numbers](./images/prime-factors.png)
+Source: @nhoyle-unsw
 
 ## Co-prime
 
-When a number shares no factors with another number other than 1 they are said to be **coprime** [^1].
+When a number shares no factors with another number other than 1 they are said to be **coprime**[^1].
 
 An example is 21 and 22. you can see from the diagram that:
 
@@ -88,7 +89,7 @@ True
 
 ```
 
-**Source code:** [Source code at guthub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/primes.py#L8)
+**Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/primes.py#L8)
 
 ### Calculate factors of numbers
 
@@ -103,9 +104,13 @@ $ python rsa_demo.py factors -n 24
 1 2 3 4 6 8 12
 ```
 
-**Source code:** [Source code at guthub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/factors.py#L36)
+**Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/factors.py#L36)
 
 ## References
 
 [^1]: <https://www.mathsisfun.com/definitions/coprime.html>
 [^how-to-link-with-an-image]: <https://meta.stackexchange.com/questions/2133/whats-the-recommended-syntax-for-an-image-with-a-link>
+
+## Useful tips
+
+Markdown images: [^how-to-link-with-an-image]
