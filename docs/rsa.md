@@ -10,15 +10,21 @@ RSA is an acronym made up from the surnames of its inventors [^1]:
 
 **Ronald Rivest** also invented RC2, 4, 5 and 6 symmetric key encryption algorithms as well as the well the MD2, 4, 5 and 6 family of hash functions. [^2]
 
-**Adi Shamir** was a co-discoverer of Differential Cryptanalysis: https://en.wikipedia.org/wiki/Differential_cryptanalysis, which was later reveled to have been already known by IBM and the NSA. [^3]
+**Adi Shamir** was a co-discoverer of [Differential Cryptanalysis](https://en.wikipedia.org/wiki/Differential_cryptanalysis), which was later revealed to have been already known by IBM and the NSA. [^3]
 
 **Leonard Adleman** is widely referred to as the Father of DNA Computing, where DNA is used to compute an algorithm. He is also the co-discoverer fo the Adleman–Pomerance–Rumely primality test. [^4]
 
 ## History
 
-The RSA algorithm was published in in 1977, but again, had an equivalent system that was developed by the British signals intelligence agency (GCHQ) in 1973 [^1]
+The RSA algorithm was published in in 1977, but again, there was an equivalent system that was developed by the British signals intelligence agency (GCHQ) in 1973 [^1], but they kep this a secret.
 
-RSA is a public-key encryption system where the encryption key is published for everyone to know and the decryption key is kept secret or private. Two large prime numbers are used to create the public and the private key. The two prime numbers are kept secret also and can be discarded as they are not needed for the encryption and decryption to take place.
+RSA is a public-key encryption system where an encryption/decryption key is published for everyone to know and a second decryption/encryption key is kept secret or private. The great thing about this is the public key can be known by everyone an can be used to decrypt messages from the owner of the private key. It also means you can verify that the message came from the owner of the private key. The public key can also be used to encrypt a message to send to the private key owner that no one else can decrypt. Because the two keys are different this is known as asymmetric encryption. This was a huge thing in cryptography because up until this point we only had symmetric cryptography where you both had to know the same secret key and it had to be shared between the sender and the receiver. Now you only had to share the public key and you could be assured that no one else has the private key.
+
+To send a private message to someone you just need to know their public key. If they want to send a private message back to you all they need to know is your public key. So no one can intercept the communication between you both.
+
+RSA requires two large prime numbers to be used to create the public and the private keys. The two prime numbers are kept secret also and can be discarded as they are not needed for the encryption and decryption to take place. There are so many large prime numbers that it is almost impossible to guess which two primes were used to generate the public and private keys. Also, it is practically impossible to guess the private key if you now the public key.
+
+When we say "practically" we mean that it would take so long to calculate that you would need more than all the computers in thw world working for trillions and trillions of years to be able to guess the key. In fact, longer than the life of the universe, which we may not be around for.
 
 ## Security
 
