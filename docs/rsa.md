@@ -288,13 +288,13 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 [^6]: <https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment>
 [^7]: <https://cacr.uwaterloo.ca/hac/>
 [^8]: <https://cacr.uwaterloo.ca/hac/about/chap8.pdf>
-[^9]: Source of 15 digit primes used for my demonstration <https://primes.utm.edu/curios/index.php?start=12&stop=15>
+[^9]: Source of 16 digit primes used for my demonstration <https://primes.utm.edu/curios/index.php?start=12&stop=15>
 [^10]: <https://stackoverflow.com/questions/29818519/what-is-the-opposite-of-pythons-ord-function>
 [^11]: <https://primes.utm.edu/lists/small/millions/>
 [^sec-eng]: <https://www.openlearning.com/unswcourses/courses/eng-principles-21/activities/learnhowrsaworks/?cl=1>
 [^pkc]: <https://en.wikipedia.org/wiki/Public-key_cryptography>
 [^shor]: <https://en.wikipedia.org/wiki/Shor%27s_algorithm>
-[^integer-factorisation]: https://en.wikipedia.org/wiki/Integer_factorization
+[^integer-factorisation]: <https://en.wikipedia.org/wiki/Integer_factorization>
 [^nist]: <https://csrc.nist.gov/publications/detail/sp/800-56b/rev-2/final>
 
 {% include_relative python-online-links.md %}
