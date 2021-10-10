@@ -37,6 +37,8 @@ For my block algorithm I chose:
 The converter functions are used to both translate the text to and from numbers and also to break it up into manageable chunks of 10 characters each (or 30 numbers). Padding is also added so that each block is exactly 30 numbers. These are stripped out when the decryption and de-translation happens:
 **Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/converter.py)
 
+Note: this is a naive implementation of a block mode known as electronic code book (ECB). ECB should not be used because it does not hide patterns in the plaintext very well. See: [https://en.wikipedia.org/wiki/Block*cipher_mode_of_operation#Electronic_codebook*(ECB)](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)>)
+
 ## References
 
 [^1]: <https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python>
@@ -46,3 +48,4 @@ The converter functions are used to both translate the text to and from numbers 
 [^iterate-over-nth-character]: <https://stackoverflow.com/questions/51121911/iterate-over-every-nth-element-in-string-in-loop-python>
 [^split-string-nth-character]: <https://stackoverflow.com/questions/9475241/split-string-every-nth-character>
 [^ascii-value-of-char]: <https://stackoverflow.com/questions/227459/how-to-get-the-ascii-value-of-a-character>
+[^ecb]: <https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)>
