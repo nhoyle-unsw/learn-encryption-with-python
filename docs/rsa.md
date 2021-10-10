@@ -219,9 +219,9 @@ Look! The original plaintext matches the processed text perfectly. That ws only 
 
 ### A large complex file
 
-The final test for the RSA block scheme that has been implemented is to accuratley encrypt and decrypt a complex file. Have look at the example file [here](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt) in which you can see a very complex structure that would be ruined if anything went missing. It is also quite a lot longer than the previous example. Let's cross our fingers for this one. Again, here is the command for encrypting and decrypting the large text file:
+The final test for the RSA block scheme that has been implemented is to accurately encrypt and decrypt a complex file. Have look at the example file [here](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt) in which you can see a very complex structure that would be ruined if anything went missing. It is also quite a lot longer than the previous example. Let's cross our fingers for this one. Again, here is the command for encrypting and decrypting the large text file:
 
-`encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f .\plaintext_long_length.txt`
+`encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f plaintext_long_length.txt`
 
 {% include_relative python-online.md %}
 
@@ -232,7 +232,7 @@ To see how Darth Vader fared, please run the example yourself as the output is t
 Or using the code from GitHub like this:
 
 ```
-$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f .\plaintext_long_length.txt
+$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f plaintext_long_length.txt
 ====== Start
 Plaintext file contents - [ and ] are not part of the file:
 [Hello, Alice! How are you today?
