@@ -95,18 +95,25 @@ decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
 
 1. For Alice it is pretty simple to decrypt. It is the opposite steps to Bob.
 1. To decrypt, Alice calculates the following:
+
    y^d mod n = 183780 ^ 214833 mod 467323
+
    which we can do online like this:
+
    ```
    power_mod -a 183780 -b 214833 -n 467323
    181901
    ```
-   {% include_relative python-online.md %}  
+
+   {% include_relative python-online.md %}
+
    Or using the code like this:
+
    ```
    $ python rsa_demo.py power_mod -a 183780 -b 214833 -n 467323
    181901
    ```
+
 1. Alice now needs to turn the numbers 181901 back into letters. 18=R, 19=S, 01=A
 1. The message is RSA.
 
