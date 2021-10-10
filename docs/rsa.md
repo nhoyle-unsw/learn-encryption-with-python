@@ -18,26 +18,28 @@ RSA is an acronym made up from the surnames of its inventors [^1]:
 
 The RSA algorithm was published in in 1977, but again, there was an equivalent system that was developed by the British signals intelligence agency (GCHQ) in 1973 [^1], but they kep this a secret.
 
-RSA is a public-key encryption system where an encryption/decryption key is published for everyone to know and a second decryption/encryption key is kept secret or private. The great thing about this is the public key can be known by everyone an can be used to decrypt messages from the owner of the private key. It also means you can verify that the message came from the owner of the private key. The public key can also be used to encrypt a message to send to the private key owner that no one else can decrypt. Because the two keys are different this is known as asymmetric encryption. This was a huge thing in cryptography because up until this point we only had symmetric cryptography where you both had to know the same secret key and it had to be shared between the sender and the receiver. Now you only had to share the public key and you could be assured that no one else has the private key.
+RSA is a public-key encryption system where an encryption/decryption key is published for everyone to know and a second decryption/encryption key is kept secret or private. The great thing about this is the public key can be known by everyone an can be used to decrypt messages from the owner of the private key. It also means you can verify that the message came from the owner of the private key. The public key can also be used to encrypt a message to send to the private key owner that no one else can decrypt. Because the two keys are different this is known as asymmetric encryption. This was a huge thing in cryptography because up until this point we only had symmetric cryptography where you both had to know the same secret key and it had to be shared between the sender and the receiver. Now you only had to share the public key and you could be assured that no one else has the private key. [^pkc]
 
-To send a private message to someone you just need to know their public key. If they want to send a private message back to you all they need to know is your public key. So no one can intercept the communication between you both.
-
-RSA requires two large prime numbers to be used to create the public and the private keys. The two prime numbers are kept secret also and can be discarded as they are not needed for the encryption and decryption to take place. There are so many large prime numbers that it is almost impossible to guess which two primes were used to generate the public and private keys. Also, it is practically impossible to guess the private key if you now the public key.
-
-When we say "practically" we mean that it would take so long to calculate that you would need more than all the computers in thw world working for trillions and trillions of years to be able to guess the key. In fact, longer than the life of the universe, which we may not be around for.
+To send a private message to someone you just need to know their public key. If they want to send a private message back to you all they need to know is your public key. So no one can intercept the communication between you both. [^1]
 
 ## Security
 
 The security of RSA relies on the fact that it is very hard (in computing time) to find the factors of the product of two large prime numbers, this is known as the "factoring problem" [^1].
 
+RSA requires two large prime numbers to be used to create the public and the private keys. The two prime numbers are kept secret also and can be discarded as they are not needed for the encryption and decryption to take place. There are so many large prime numbers that it is almost impossible to guess which two primes were used to generate the public and private keys. Also, it is practically impossible to guess the private key if you now the public key. [NIST](https://www.nist.gov/) recommends to use at least 3072 length modulus to prevent practical factorisation as this provides 128 bits of security. [^nist]
+
+When we say "practically impossible" we mean that it would take so long to calculate that you would need more than all the computers in the world working for longer than the age of the universe to be able to factorise the modulus. [^integer-factorisation]
+
 Distinct from the "factoring problem" mentioned above there is also the "RSA problem" which is about breaking the RSA algorithm by using only the public key.
 For RSA key sizes that are in excess of 1024 bits there is no known efficient method for solving this problem [^5]. If ever a method was developed that could solve the RSA problem efficiently then it could threaten current crypto systems or eventual security of systems that used it in the past as a way to encrypt information.
 
-There have been reports of progress towards cracking RSA encryption using Shor's algorithm and quantum computers as seen in https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment, but this has only been done for the number 15 [^6]. However, it appears that this factorisation of 15 into 3 x 5 may be classified informally as one of the "stunt" factorisations where experiments are set up knowing the factors already, which is not a valid test of an algorithm that is supposed to be finding unknown factors. So it seems a long way off at the moment.
+There have been reports of progress towards cracking RSA encryption using Shor's algorithm [^shor] and quantum computers as seen in https://spectrum.ieee.org/encryptionbusting-quantum-computer-practices-factoring-in-scalable-fiveatom-experiment, but this has only been done for the number 15 [^6]. However, it appears that this factorisation of 15 into 3 x 5 may be classified informally as one of the "stunt" factorisations where experiments are set up knowing the factors already, which is not a valid test of an algorithm that is supposed to be finding unknown factors. So it seems a long way off at the moment.
+
+An interesting piece of information from NIST is: "The NIST Special Publication on Computer Security (SP 800-78 Rev 1 of August 2007) does not allow public exponents e smaller than 65537, but does not state a reason for this restriction." They may have some insight into how RSA encryption can be compromised, but they are not sharing the information. [^1]
 
 ## RSA Key generation
 
-Alice can create an RSA public key and private key using the following method (with example on the right). **Note:** I have used an example that matches one from the Fundamentals of Security Engineering [^sec-eng] course to allow other students to follow the example, but you do not need to have seen this example to follow below. We will do a more realistic example once you understand the basic steps.
+Alice can create an RSA public key and private key using the following method (with example on the right). **Note:** I have used an example that matches one from the Fundamentals of Security Engineering course [^sec-eng] to allow other students to follow the example, but you do not need to have seen this example to follow below. We will do a more realistic example once you understand the basic steps.
 
 | Step | Procedure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                                                                                       | Example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                          |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -290,5 +292,9 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 [^10]: <https://stackoverflow.com/questions/29818519/what-is-the-opposite-of-pythons-ord-function>
 [^11]: <https://primes.utm.edu/lists/small/millions/>
 [^sec-eng]: <https://www.openlearning.com/unswcourses/courses/eng-principles-21/activities/learnhowrsaworks/?cl=1>
-
-{% include_relative python-online-links.md %}
+[^pkc]: <https://en.wikipedia.org/wiki/Public-key_cryptography>
+[^shor]: <https://en.wikipedia.org/wiki/Shor%27s_algorithm>
+[^integer-factorisation]: https://en.wikipedia.org/wiki/Integer_factorization
+[^nist]:
+    https://csrc.nist.gov/publications/detail/sp/800-56b/rev-2/final
+    {% include_relative python-online-links.md %}
