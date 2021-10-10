@@ -79,16 +79,23 @@ decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
 
 1. Bob has a message "RSA" to encrypt and send to Alice.
 1. Convert the message to a number using the position of the letter in the alphabet: R=18, S=19 A=01, so we have 181901.
-1. To encrypt this message, all we need to do is calculate the following:  
-   x^e mod n = 181901 ^ 7825 mod 467323
+1. To encrypt this message, all we need to do is calculate the following:
+
+   x<sup>e</sup> mod n = 181901 <sup>7825</sup> mod 467323
+
    which we can do online like this:
+
    `power_mod -a 181901 -b 7825 -n 467323`
+
    {% include_relative python-online.md %}
+
    Or using the code like this:
+
    ```
    $ python rsa_demo.py power_mod -a 181901 -b 7825 -n 467323
    183780
    ```
+
 1. Bob can now send this secret message to Alice
 
 ## RSA Decryption - Alice using private key to decrypt
@@ -96,7 +103,7 @@ decryption key: find d that satisfies: 7825 . d ≅ 1 (mod 465928 ), d = 214833
 1. For Alice it is pretty simple to decrypt. It is the opposite steps to Bob.
 1. To decrypt, Alice calculates the following:
 
-   y^d mod n = 183780 ^ 214833 mod 467323
+   y<sup>d</sup> mod n = 183780 <sup>214833</sup> mod 467323
 
    which we can do online like this:
 
