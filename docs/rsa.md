@@ -295,6 +295,6 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 [^pkc]: <https://en.wikipedia.org/wiki/Public-key_cryptography>
 [^shor]: <https://en.wikipedia.org/wiki/Shor%27s_algorithm>
 [^integer-factorisation]: https://en.wikipedia.org/wiki/Integer_factorization
-[^nist]:
-    https://csrc.nist.gov/publications/detail/sp/800-56b/rev-2/final
-    {% include_relative python-online-links.md %}
+[^nist]: <https://csrc.nist.gov/publications/detail/sp/800-56b/rev-2/final>
+
+{% include_relative python-online-links.md %}
