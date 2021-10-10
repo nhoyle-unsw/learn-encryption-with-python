@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # modulus
 # https://en.wikipedia.org/wiki/Modular_arithmetic
 # https://en.wikipedia.org/wiki/Modulo_operation

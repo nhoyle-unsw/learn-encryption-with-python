@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Euler algorithms:
 # - Totient: # https://learning.oreilly.com/library/view/implementing-cryptography-using/9781119612209/c04.xhtml#head-2-26
 

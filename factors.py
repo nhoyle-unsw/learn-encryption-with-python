@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # factors
 
 from modulus import mod

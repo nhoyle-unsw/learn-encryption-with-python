@@ -1,4 +1,5 @@
-# prime
+# -*- coding: utf-8 -*-
+# prbs
 
 from printd import printd
 from factors import gcd

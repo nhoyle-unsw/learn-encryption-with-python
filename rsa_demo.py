@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Entrypoint for running the RSA demonstration algorithms
 # commands are executed like this:
 # rsa_demo gcd 26 7
@@ -61,6 +62,8 @@ parser.add_argument("-t",
                     help="value for t - text to be converted to numbers")
 parser.add_argument("-f",
                     help="value for f - file to be encrypted or decrypted")
+parser.add_argument("-B", "--block-mode",
+                    help="Set the block cipher mode to use. Default is CBC, another option is EBC. See https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation")
 parser.add_argument("-D", "--debug", action="store_true",
                     help="Output debug statements (you need to press Enter to see each line of the output)")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
@@ -72,6 +75,7 @@ is_verbose = args.verbose
 # set the debug and verbosity levels in the print module
 printd_module.is_debug = args.debug or args.verbose
 printd_module.is_verbose = args.verbose
+rsa.use_ecb = args.block_mode == "ECB"
 
 
 def main():

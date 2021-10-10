@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # printd is used to print out debug statements
 from __future__ import print_function
 from inspect import getframeinfo, stack
