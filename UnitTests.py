@@ -101,7 +101,7 @@ class UnitTests(unittest.TestCase):
         self.assertTrue(mod_mul_inv_naive(3, 3) == None)
 
     def test_encrypt_decrypt(self):
-        """[encrypt all of teh alphabet and then decrypt it to check it comes back the same.]
+        """[encrypt all of the alphabet and then decrypt it to check it comes back the same.]
         """
         test_all_chars_to_155 = ""
         for i in range(0, 155+1):
@@ -117,7 +117,7 @@ class UnitTests(unittest.TestCase):
             public_key,
             modulus_n
         )
-        self.assertEquals(encrypt_and_decrypt_result, test_all_chars_to_155)
+        self.assertEqual(encrypt_and_decrypt_result, test_all_chars_to_155)
 
 
 if __name__ == '__main__':

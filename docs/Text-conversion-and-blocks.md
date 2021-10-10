@@ -37,11 +37,16 @@ For my block algorithm I chose:
 The converter functions are used to both translate the text to and from numbers and also to break it up into manageable chunks of 10 characters each (or 30 numbers). Padding is also added so that each block is exactly 30 numbers. These are stripped out when the decryption and de-translation happens:
 **Source code:** [Source code at GitHub](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/converter.py)
 
-**Note:** the block mode described above is a naive implementation of a block mode known as electronic code book (ECB). ECB should not be used in real cryptography because it does not hide patterns in the plaintext. A better block mode would appear to randomly shuffle the data so that any patterns are removed. See: [https://en.wikipedia.org/wiki/Block*cipher_mode_of_operation#Electronic_codebook*(ECB)](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)>). Following is a picture encrypted using ECB as the block mode. You can see that the white areas of the picture are encrypted with exactly the same pattern. So are black areas and any other repeated patters have the same output.
+**Note:** the block mode described above is a naive implementation of a block mode known as electronic code book (ECB). ECB should not be used in real cryptography because it does not hide patterns in the plaintext. A better block mode would appear to randomly shuffle the data so that any patterns are removed. See: [https://en.wikipedia.org/wiki/Block*cipher_mode_of_operation#Electronic_codebook*(ECB)](<https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)>). Following is a picture encrypted using ECB as the block mode. You can see that the white areas of the picture are encrypted with exactly the same pattern. So are black areas and any other repeated patters have the same output. [^ebc]
 
 ![](./images/Tux.jpg) ![](./images/Tux_ecb.jpg)
+[^ebc]
 
-[^ecb]
+Instead the block mode chosen was Cipher Block Chaining (CBC): https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC) where the previous ciphertext is fed into and XORed with the next plaintext before encrypting. You can see this being used in the source code for the encryption and decryption functions.  
+Encrypt using CBC: [GitHub code for encryption + CBC](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/rsa.py#L122)  
+Decrypt using CBC: [GitHub code for decryption + CBC](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/rsa.py#L172)
+
+[^cbc]
 
 ## References
 
@@ -52,4 +57,5 @@ The converter functions are used to both translate the text to and from numbers 
 [^iterate-over-nth-character]: <https://stackoverflow.com/questions/51121911/iterate-over-every-nth-element-in-string-in-loop-python>
 [^split-string-nth-character]: <https://stackoverflow.com/questions/9475241/split-string-every-nth-character>
 [^ascii-value-of-char]: <https://stackoverflow.com/questions/227459/how-to-get-the-ascii-value-of-a-character>
-[^ecb]: <https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)>
+[^ebc]: <https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)>
+[^cbc]: <https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)>
