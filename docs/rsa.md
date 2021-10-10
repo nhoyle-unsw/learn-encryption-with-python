@@ -294,8 +294,8 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 1. Padding. "Modern techniques such as Optimal Asymmetric Encryption Padding (OAEP) for padding RSA messages are specified and standardized in Public
    Key Cryptography Standard #1 (PKCS #1)." [^pkcs] [^pkcs-rfq-8017] [^crypto-textbook]
 1. Additional security concerns can be found in many places, a few being [^7] [^8] and [^crypto-textbook]
-1. Wikipedia lists a huge number of attacks available in general: https://en.wikipedia.org/wiki/Category:Cryptographic_attacks as well as a competition initiated by RSA themselves. The RSA Factoring challenge: https://en.wikipedia.org/wiki/RSA_Factoring_Challenge.
-1. https://en.wikipedia.org/wiki/RSA_numbers are a result of this challenge. You can see the numbers here and try to factorise some of them: https://www.ontko.com/pub/rayo/primes/rsa_fact.html. Good luck!
+1. Wikipedia lists a huge number of attacks available in general: [Cryptographic_attacks)](https://en.wikipedia.org/wiki/Category:Cryptographic_attacks) as well as a competition initiated by RSA themselves. The RSA Factoring challenge: [RSA_Factoring_Challenge](https://en.wikipedia.org/wiki/RSA_Factoring_Challenge).
+1. [RSA_numbers](https://en.wikipedia.org/wiki/RSA_numbers) are the numbers put up for factorising as a result of this challenge. You can see the numbers here and try to factorise some of them: [RSA factorising challenge numbers](https://www.ontko.com/pub/rayo/primes/rsa_fact.html). Good luck!
 
 ## References
 
@@ -317,6 +317,6 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 [^nist]: <https://csrc.nist.gov/publications/detail/sp/800-56b/rev-2/final>
 [^pkcs]: <https://en.wikipedia.org/wiki/PKCS_1>
 [^pkcs-rfq-8017]: <https://datatracker.ietf.org/doc/html/rfc8017>
-[^crypto-textbook]: https://www.crypto-textbook.com/sample_chapters.php
+[^crypto-textbook]: <https://www.crypto-textbook.com/sample_chapters.php>
 
 {% include_relative python-online-links.md %}
