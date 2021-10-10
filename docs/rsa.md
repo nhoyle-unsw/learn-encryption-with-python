@@ -229,7 +229,7 @@ Both Match!
 ====== End
 ```
 
-Look! The original plaintext matches the processed text perfectly. That ws only a small example, now lets do a large file with complex characters in it to make sure our code is working as required.
+Look! The original plaintext matches the processed text perfectly. That was only a small example, now lets do a large file with complex characters in it to make sure our code is working as required.
 
 ### A large complex file
 
