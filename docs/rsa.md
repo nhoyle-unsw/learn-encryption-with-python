@@ -116,7 +116,7 @@ Too easy, now for something a bit more realistic.
 
 Now that the basic example is out of the way, let's look at a real example of a much longer message being encrypted, sent to Alice and then decrypted to re-produce the file as it was.
 
-**Note:** although this is a realistic demonstration of the application of RSA, this should not be used in the real world as it is not secure. The 15 digit primes for this example were sourced from: [^9] and [^10]
+**Note:** although this is a realistic demonstration of the application of RSA, this should not be used in the real world as it is not secure. The 16 digit primes for this example were sourced from: [^9] and [^10]
 
 The message that Bob sent Alice above was only possible because the message was so small. With RSA you can only encrypt a number that is smaller than the modulo n. In the above example this was 467323. So we can only encrypt three letters at the most. This is not very practical. It is good for learning how it works though as the numbers are quite small. So, now lets see how we can encrypt and decrypt a text file of any size at all.
 
@@ -133,9 +133,9 @@ The problems we have are:
 
 1. For how to add more characters, numbers and symbols see <a href="Text-conversion-and-blocks#conversion-of-text-to-numbers">Conversion of text to numbers</a> - this scheme has 3 digits for each character.
 1. For how to chunk up the text into manageable blocks see: <a href="Text-conversion-and-blocks#breaking-text-up-into-blocks">Breaking text up into blocks</a>
-1. For bigger primes see [^9]. I chose the following two 15 digit primes for this example:  
-   p = 999998727899999  
-   q = 990377764891511
+1. For bigger primes see [^9]. I chose the following two 16 digit primes for this example:  
+   p = 9999999900000001  
+   q = 9779737137133111
 1. This will give us a modulo n that is 30 digits long. This fits nicely with the character encoding scheme chosen above because we have three digits per character, so we will be able to encrypt 10 characters at a time. This gives us our block size.
 1. The last problem is how it can be all made to encode, encrypt, decrypt and decode back into the original plaintext file. Well, this is where python will help us. We can re-use the demonstration code written for learning to do just that in a repeatable fashion.
 
@@ -147,7 +147,7 @@ We can now use all of the parts we have been over to do a complete end to end en
 
 using the above two prime numbers **_p_** and **_q_** and a chosen encryption key **_d_**. I chose d=65537 because it is co-prime with p.q (the python code will check tht for you). It also might be more efficient for certain algorithms due to there only being two 1 in its binary form (10000000000000001) [^7]. Here is how to calculate the RSA keys:
 
-`rsa -p 999998727899999 -q 990377764891511 -e 65537`
+`rsa -p 9999999900000001 -q 9779737137133111 -e 65537`
 
 {% include_relative python-online.md %}
 
@@ -156,29 +156,29 @@ using the above two prime numbers **_p_** and **_q_** and a chosen encryption ke
 Or using the code from GitHub like this:
 
 ```
-$ python rsa_demo.py rsa -p 999998727899999 -q 990377764891511 -e 65537
-p = 999998727899999
-q = 990377764891511
-n = p * q = 990376505031955291131092008489
-m = (p-1) * (q-1) = 990376505031953300754599216980
+$ python rsa_demo.py rsa -p 9999999900000001 -q 9779737137133111 -e 65537
+p = 9999999900000001
+q = 9779737137133111
+n = p * q = 97797370393357406066426037133111
+m = (p-1) * (q-1) = 97797370393357386286689000000000
 e must be chosen as co-prime with m, you chose e = 65537
 math.gcd(m, e)= 1
-Check passed: your encryption key e: 65537 has no common factors with m: 990376505031953300754599216980 so we can proceed...
+Check passed: your encryption key e: 65537 has no common factors with m: 97797370393357386286689000000000 so we can proceed...
 decryption key: find d that satisfies: e . d ≅ 1 (mod m)
-decryption key: find d that satisfies: 65537 . d ≅ 1 (mod 990376505031953300754599216980 ), d = 282558858218830016898995928393
+decryption key: find d that satisfies: 65537 . d ≅ 1 (mod 97797370393357386286689000000000 ), d = 52306230480918612449776810473473
 ```
 
 So, we have:
 public key e = 65537 (share this with everyone)  
-modulo n = 990376505031955291131092008489 (share this with everyone)  
-private key d = 282558858218830016898995928393 (keep this secret, Alice!)
+modulo n = 97797370393357406066426037133111 (share this with everyone)  
+private key d = 52306230480918612449776810473473 (keep this secret, Alice!)
 
 Next, we just need a message to encrypt. Let's try a small example first so we can test that it works:
 Let's get Bob to say **_"Hello, Alice! How are you today?"_**.
 
 You can see this plaintext in the following file: [plaintext_text.txt](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_text.txt). Here is the command to encode, encrypt, and decrypt that file. The log shows the progress at each step of the way and at the end compares the original input to the decrypted output to make sure they match:
 
-`encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_text.txt `
+`encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f plaintext_text.txt`
 
 {% include_relative python-online.md %}
 
@@ -187,7 +187,7 @@ You can see this plaintext in the following file: [plaintext_text.txt](https://g
 Or using the code from GitHub like this:
 
 ```
-$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_text.txt
+ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f plaintext_text.txt
 ====== Start
 Plaintext file contents - [ and ] are not part of the file:
 [Hello, Alice! How are you today?]
@@ -199,13 +199,13 @@ Encoded contents - [ and ] are not part of the file:
 221163000000000000000000000000]
 ======
 RSA Encrypted contents using public key 65537 - [ and ] are not part of the file:
-[153993868398685821414020220200
-931945730961823099956807270267
-487852773892009187752813440763
-479664297831093847580730005558
+[81720659348595247925453816198772
+33534977058181604780640661163730
+73067597160356732615756508651850
+53896116506205986393976967523468
 ]
 ======
-RSA Decrypted contents using private key 282558858218830016898995928393 -[ and ] are not part of the file:
+RSA Decrypted contents using private key 52306230480918612449776810473473 -[ and ] are not part of the file:
 [Hello, Alice! How are you today?]
 ======
 Checking if original plaintext matches encrypted + decrypted result:
@@ -221,7 +221,7 @@ Look! The original plaintext matches the processed text perfectly. That ws only 
 
 The final test for the RSA block scheme that has been implemented is to accuratley encrypt and decrypt a complex file. Have look at the example file [here](https://github.com/nhoyle-unsw/learn-encryption-with-python/blob/main/plaintext_long_length.txt) in which you can see a very complex structure that would be ruined if anything went missing. It is also quite a lot longer than the previous example. Let's cross our fingers for this one. Again, here is the command for encrypting and decrypting the large text file:
 
-`encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_long_length.txt`
+`encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f .\plaintext_long_length.txt`
 
 {% include_relative python-online.md %}
 
@@ -232,7 +232,7 @@ To see how Darth Vader fared, please run the example yourself as the output is t
 Or using the code from GitHub like this:
 
 ```
-$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 282558858218830016898995928393 -n 990376505031955291131092008489 -f plaintext_long_length.txt
+$ python rsa_demo.py encrypt_and_decrypt_file_contents -e 65537 -d 52306230480918612449776810473473 -n 97797370393357406066426037133111 -f .\plaintext_long_length.txt
 ====== Start
 Plaintext file contents - [ and ] are not part of the file:
 [Hello, Alice! How are you today?

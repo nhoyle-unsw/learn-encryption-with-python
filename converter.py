@@ -4,11 +4,7 @@ from printd import printd
 
 
 def convert_to_numbers(text):
-    """[This function converts a string of text into 3 digit numbers in blocks of 10.
-    This is an Electronic Code Book block mode implementation and is considered not secure
-    because you if two blocks of ten characters are the same then they will produce the same
-    output. An attacker can see this. An example of this is can be seen at:
-    https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)]
+    """[This function converts a string of text into 3 digit numbers in blocks of 10]
 
     Args:
         text ([type]): [description]
@@ -48,6 +44,7 @@ def convert_to_text(number_as_text):
     for charnum in output:
         # only include non zero characters (this removes the padding)
         if(charnum != "000"):
+            printd("charnum:", charnum)
             text += chr(int(charnum) - 100)
     printd(text)
     return text

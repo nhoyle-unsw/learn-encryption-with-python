@@ -106,8 +106,8 @@ class UnitTests(unittest.TestCase):
         test_all_chars_to_155 = ""
         for i in range(0, 155+1):
             test_all_chars_to_155 += chr(i)
-        private_key = 282558858218830016898995928393
-        modulus_n = 990376505031955291131092008489
+        private_key = 52306230480918612449776810473473
+        modulus_n = 97797370393357406066426037133111
         public_key = 65537
         encrypt_and_decrypt_result = rsa.decrypt_large_string(
             rsa.encrypt_large_string(

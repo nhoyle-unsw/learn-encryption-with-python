@@ -5,6 +5,12 @@ from factors import gcd
 from modulus import *
 import converter
 
+# The algorithm uses Cipher block chaining (CBC) by default.
+# To turn this of and use ECB set the below to True.
+# this just uses 0 in the XOR step so it doesn't use the
+# previous ciphertext
+use_ecb = False
+
 
 def guess_encryption_key(m):
     """[Try to guess a suitable encryption key by finding something that is coprime]
@@ -109,8 +115,18 @@ def encrypt_large_string(large_string, e, n):
     encrypted = ""
     numbers_as_int_list, numbers_as_string = converter.convert_to_numbers(
         large_string)
+    previous_encrypted_number = 0
     for number_as_int in numbers_as_int_list:
-        encrypted += str(encrypt(int(number_as_int), e, n)) + "\n"
+        # the XOR here is ^. It uses CBC by default
+        # https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)
+        number_xor_previous = number_as_int ^ previous_encrypted_number
+        encrypted_number = encrypt(int(number_xor_previous), e, n)
+        previous_encrypted_number = encrypted_number
+        if (use_ecb):
+            # By setting the previous cipher to 0 the XOR then has no effect, which turns it into ECB
+            # https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)
+            previous_encrypted_number = 0
+        encrypted += str(encrypted_number) + "\n"
     return encrypted
 
 
@@ -129,13 +145,41 @@ def read_file(file_name):
 
 
 def decrypt_large_string(large_string, e, n):
+    """[summary]
+
+    Args:
+        large_string ([type]): [description]
+        e ([type]): [description]
+        n ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     decrypted = ""
     # remove new lines
     # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_join2
+    previous_cipher_number_as_int = 0
     for number_as_string in large_string.split("\n"):
         # avoid blank lines
         if len(number_as_string) > 0:
-            decrypted += str(decrypt(int(number_as_string), e, n))
+            cipher_number_as_int = int(number_as_string)
+            plaintext_number_as_int = decrypt(cipher_number_as_int, e, n)
+            printd("plaintext_number_as_int:", plaintext_number_as_int)
+            printd("previous_cipher_number_as_int:",
+                   previous_cipher_number_as_int)
+            # the XOR here is ^. It uses CBC by default
+            # https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)
+            block_str = str(plaintext_number_as_int ^
+                            previous_cipher_number_as_int)
+            printd("block_str:", block_str)
+            printd("converter.convert_to_text(block_str)",
+                   converter.convert_to_text(block_str))
+            previous_cipher_number_as_int = cipher_number_as_int
+            decrypted += block_str
+            if (use_ecb):
+                # By setting the previous cipher to 0 the XOR then has no effect, which turns it into ECB
+                # https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)
+                previous_cipher_number_as_int = 0
     decrypted_converted = converter.convert_to_text(decrypted)
     return decrypted_converted
 
