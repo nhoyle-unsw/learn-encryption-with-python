@@ -289,8 +289,13 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 
 ## Security notes
 
-1. In practice these two selected prime numbers should be large and randomly selected. There other considerations to make the possibility of attacks less likely. This is one reason why you should never implement your own encryption as the mathematics behind it is very complex. I do not fully understand the choices that make RSA weaker or stronger which is why this code should only be used for demonstration purposes.
-2. Additional security concerns are left to the reader in [^7] and [^8]
+1. In practice these two selected prime numbers should be large and randomly selected. There other considerations to make the possibility of attacks less likely[^pkcs-rfq-8017][^8]. This is one reason why you should never implement your own encryption as the mathematics behind it is very complex. I do not fully understand the choices that make RSA weaker or stronger which is why this code should only be used for demonstration purposes.
+1. RSA is open to attacks if the attacker can get you to encrypt some special text and have you send the result to them. Appropriate padding with a random structure inserted before encryption can prevent this (see next point)
+1. Padding. "Modern techniques such as Optimal Asymmetric Encryption Padding (OAEP) for padding RSA messages are specified and standardized in Public
+   Key Cryptography Standard #1 (PKCS #1)." [^pkcs] [^pkcs-rfq-8017] [^crypto-textbook]
+1. Additional security concerns can be found in many places, a few being [^7] [^8] and [^crypto-textbook]
+1. Wikipedia lists a huge number of attacks available in general: https://en.wikipedia.org/wiki/Category:Cryptographic_attacks as well as a competition initiated by RSA themselves. The RSA Factoring challenge: https://en.wikipedia.org/wiki/RSA_Factoring_Challenge.
+1. https://en.wikipedia.org/wiki/RSA_numbers are a result of this challenge. You can see the numbers here and try to factorise some of them: https://www.ontko.com/pub/rayo/primes/rsa_fact.html. Good luck!
 
 ## References
 
@@ -310,5 +315,8 @@ That concludes the practical demonstration of RSA being used in a near-real-worl
 [^shor]: <https://en.wikipedia.org/wiki/Shor%27s_algorithm>
 [^integer-factorisation]: <https://en.wikipedia.org/wiki/Integer_factorization>
 [^nist]: <https://csrc.nist.gov/publications/detail/sp/800-56b/rev-2/final>
+[^pkcs]: <https://en.wikipedia.org/wiki/PKCS_1>
+[^pkcs-rfq-8017]: <https://datatracker.ietf.org/doc/html/rfc8017>
+[^crypto-textbook]: https://www.crypto-textbook.com/sample_chapters.php
 
 {% include_relative python-online-links.md %}
